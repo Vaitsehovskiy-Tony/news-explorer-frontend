@@ -1,0 +1,13 @@
+@import url(./__titles-subtitle/__titles-subtitle.css);
+@import url(./__titles-title/__titles-title.css);
+@import url(./__titles/__titles.css);
+
+.header {
+  background-image: url(../../images/desktop_georgia.jpg);
+  background-size: cover;
+}
+
+.articles .header{
+  background-color: #fff;
+  background-image: none;
+}

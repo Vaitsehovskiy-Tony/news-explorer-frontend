@@ -1,0 +1,12 @@
+.header-navbar__logo-link {
+  font-size: 20px;
+  line-height: 120%;
+  color: #ffffff;
+  text-decoration: none;
+  font-family: Roboto Slab;
+  font-weight: 400;
+}
+
+.articles .header-navbar__logo-link {
+  color: #1A1B22;
+}

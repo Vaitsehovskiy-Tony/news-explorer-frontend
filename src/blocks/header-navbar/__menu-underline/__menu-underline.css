@@ -1,0 +1,12 @@
+.header-navbar__menu-underline {
+  position: relative;
+  top: 38px;
+
+  border: none;
+  background-color: #ffffff;
+  height: 2px;
+}
+
+.articles .header-navbar__menu-underline {
+  background-color: #000;
+}

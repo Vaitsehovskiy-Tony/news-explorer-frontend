@@ -1,0 +1,8 @@
+.header-navbar__menu {
+  display: grid;
+  grid-template-columns: repeat(3, max-content);
+  grid-gap: 32px;
+  align-items: center;
+
+  padding: 100px 0 0;
+}

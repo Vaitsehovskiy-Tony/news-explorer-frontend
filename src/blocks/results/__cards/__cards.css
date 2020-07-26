@@ -1,0 +1,10 @@
+.result__cards {
+
+  margin: 64px auto 64px;
+
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-auto-rows: auto;
+
+  grid-gap: 16px;
+}

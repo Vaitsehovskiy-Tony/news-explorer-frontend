@@ -1,0 +1,13 @@
+@import url(./__avatar/__avatar.css);
+@import url(./__content-subtitle/__content-subtitle.css);
+@import url(./__content-title/__content-title.css);
+@import url(./__content/__content.css);
+
+.about .wrapper {
+  display: flex;
+  flex-direction: row;
+}
+
+.about {
+  margin: 88px auto;
+}

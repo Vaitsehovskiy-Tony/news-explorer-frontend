@@ -1,0 +1,22 @@
+@import url(./__bookmark/__bookmark.css);
+@import url(./__content/__content.css);
+@import url(./__date/__date.css);
+@import url(./__img/__img.css);
+@import url(./__login-reminder-text/__login-reminder-text.css);
+@import url(./__login-reminder/__login-reminder.css);
+@import url(./__source/__source.css);
+@import url(./__subtitle/__subtitle.css);
+@import url(./__title/__title.css);
+@import url(./__tag/__tag.css);
+@import url(./__tag-text/__tag-text.css);
+
+
+.card {
+  width: 28vw;
+  max-width: 400px ;
+
+  border-radius: 16px;
+  background-color: #fff;
+
+  position: relative;
+}

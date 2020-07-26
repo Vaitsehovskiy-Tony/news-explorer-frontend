@@ -1,0 +1,8 @@
+.footer__menu-list {
+  margin-left: 0;
+  padding-left: 0;
+
+  display: grid;
+  grid-template-columns: repeat(3, fit-content(200px));
+  grid-gap: 50px;
+}

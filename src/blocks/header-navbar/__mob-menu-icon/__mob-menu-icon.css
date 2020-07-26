@@ -1,0 +1,8 @@
+.header-navbar__mob-menu-icon {
+  background: url(../../../images/gamburger_black.svg) no-repeat;
+
+  width: 40px;
+  height: 40px;
+
+  display: none;
+}
