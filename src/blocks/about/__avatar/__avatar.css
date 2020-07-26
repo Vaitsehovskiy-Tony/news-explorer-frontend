@@ -3,9 +3,19 @@
   border-radius: 1000px;
 }
 
+@media screen and (max-width: 1000px) {
+  .about__avatar {
+    width: 30%;
+    height: 30%;
+    margin: 0 auto;
+  }
+}
+
+
 @media screen and (max-width: 700px) {
   .about__avatar {
     width: 350px;
+    height: auto;
     margin: 0 auto;
   }
 }
