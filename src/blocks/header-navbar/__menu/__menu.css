@@ -6,3 +6,15 @@
 
   padding: 100px 0 0;
 }
+
+@media screen and (max-width: 600px) {
+  .header-navbar__menu  {
+    display: none;
+  }
+}
+
+@media screen and (max-width: 450px) {
+  .header-navbar__menu  {
+    display: none;
+  }
+}

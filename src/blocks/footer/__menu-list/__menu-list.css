@@ -6,3 +6,11 @@
   grid-template-columns: repeat(3, fit-content(200px));
   grid-gap: 50px;
 }
+
+@media screen and (max-width: 450px) {
+  .footer__menu-list {
+    display: grid;
+
+  }
+
+}

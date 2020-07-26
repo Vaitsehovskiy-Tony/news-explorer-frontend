@@ -10,3 +10,14 @@
   font-size: 40px;
   line-height: 115%;
 }
+
+@media screen and (max-width: 450px) {
+  .results__title {
+    font-size: 30px;
+    line-height: 113%;
+
+    width: 80%;
+    margin: 32px 0 0 10px;
+  }
+}
+

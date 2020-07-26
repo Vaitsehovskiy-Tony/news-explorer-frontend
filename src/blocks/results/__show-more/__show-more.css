@@ -10,3 +10,9 @@
   border: none;
   border-radius: 80px;
 }
+
+@media screen and (max-width: 450px) {
+  .results__show-more {
+    margin: 0 auto 40px;
+}
+}

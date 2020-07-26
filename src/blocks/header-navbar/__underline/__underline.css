@@ -2,8 +2,8 @@
   grid-row: 2 / 2;
   grid-column: 1 / span 2;
 
-  width: 100vw;
-  margin: 28px 0 0 -150px;
+  width: 100%;
+  margin: 28px 0 0 0;
 
   border: none;
   background-color: rgba(255, 255, 255, 0.3);
@@ -13,4 +13,12 @@
 
 .articles .header-navbar__underline {
   background-color: rgba(0, 0, 0, 0.3);
+}
+
+
+@media screen and (max-width: 450px) {
+  .header-navbar__underline {
+    width: 100%;
+    margin: 0;
+  }
 }

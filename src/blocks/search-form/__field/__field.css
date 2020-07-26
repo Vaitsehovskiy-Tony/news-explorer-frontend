@@ -11,3 +11,15 @@
   text-indent: 25px;
   outline: none;
 }
+
+@media screen and (max-width: 700px) {
+  .search-form__field {
+    width: 95%;
+  }
+}
+
+@media screen and (max-width: 450px) {
+  .search-form__field {
+    width: 95%;
+  }
+}

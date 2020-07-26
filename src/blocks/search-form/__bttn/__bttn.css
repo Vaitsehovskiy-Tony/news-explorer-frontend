@@ -10,3 +10,23 @@
   position: relative;
   right: 160px;
 }
+
+@media screen and (max-width: 700px) {
+  .search-form__bttn {
+    width: 95%;
+    height: 56px;
+    position: static;
+    margin: 10px 0 0;
+    padding: 0;
+  }
+}
+
+@media screen and (max-width: 450px) {
+  .search-form__bttn {
+    width: 95%;
+    height: 56px;
+    position: static;
+    margin: 10px 0 0;
+    padding: 0;
+  }
+}

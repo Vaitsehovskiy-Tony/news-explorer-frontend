@@ -8,3 +8,17 @@
   font-size: 60px;
   line-height: 107%;
 }
+
+@media screen and (max-width: 1024px) {
+  .header__titles-title {
+    font-size: 55px;
+    line-height: 107%;
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .header__titles-title {
+    font-size: 36px;
+    line-height: 111%;
+  }
+}

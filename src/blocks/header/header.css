@@ -11,3 +11,11 @@
   background-color: #fff;
   background-image: none;
 }
+
+
+@media screen and (max-width: 450px) {
+  .header {
+    background-image: url(../../images/mobile_georgia.png);
+
+  }
+}
