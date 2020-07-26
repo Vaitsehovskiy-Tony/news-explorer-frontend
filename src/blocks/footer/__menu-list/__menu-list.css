@@ -7,10 +7,11 @@
   grid-gap: 50px;
 }
 
-@media screen and (max-width: 450px) {
+@media screen and (max-width: 470px) {
   .footer__menu-list {
     display: grid;
-
+    grid-template-columns: repeat(3, minmax(min-content, max-content));
+    grid-gap: 10px;
   }
 
 }

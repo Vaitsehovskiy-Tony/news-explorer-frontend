@@ -10,3 +10,10 @@
   justify-content: center;
   display: none;
 }
+
+
+@media (min-width: 320px) and (max-width: 450px) {
+  .popup__signup{
+    align-items: flex-end;
+  }
+}

@@ -15,11 +15,11 @@
         <div class="wrapper">
           <section class="header-navbar">
             <h2 class="header-navbar__logo">
-              <a href="./index.html" class="header-navbar__logo-link">News Explorer</a>
+              <a href="./index.html" class="header-navbar__logo-link">NewsExplorer</a>
             </h2>
-            <div class="header-navbar__mob-menu-icon"></div>
+            <img class="header-navbar__mob-menu-icon" alt="" src="<%=require('./images/menu.svg')%>">
             <nav>
-              <ul class="header-navbar__menu"l>
+              <ul class="header-navbar__menu">
                 <li>
                   <a href="./index.html" class="header-navbar__menu-item header-navbar__menu-item_active">Главная</a>
                   <hr class="header-navbar__menu-underline">
@@ -28,14 +28,31 @@
                   <a href="./articles.html" target="_blank" class="header-navbar__menu-item active">Сохранённые статьи</a>
                 </li>
                 <li class="header-navbar__menu-item_hidden">
-                  <button href="" class="header-navbar__menu-item header-navbar__menu-item_auth">Авторизоваться</button>
+                  <button class="header-navbar__menu-item header-navbar__menu-item_auth">Авторизоваться</button>
                 </li>
                 <li>
-                  <button href="" class="header-navbar__menu-item header-navbar__menu-item_auth header-navbar__menu-item_logged">Грета<img src="<%=require('./images/logout.png')%>"alt="" class="header-navbar__menu-item-pic"></button>
+                  <button class="header-navbar__menu-item header-navbar__menu-item_auth header-navbar__menu-item_logged">Грета<img src="<%=require('./images/logout.png')%>"alt="" class="header-navbar__menu-item-pic"></button>
                 </li>
               </ul>
             </nav>
             <hr class="header-navbar__underline">
+          </section>
+          <section class="header-mob">
+            <nav>
+              <ul class="header-mob__list">
+                <li>
+                  <div class="header-mob__opened"><a class="header-navbar__menu-item" href="#">NewsExplorer</a><img src="<%=require('./images/close.svg')%>" alt="" class="header-mob__close-icon"></div></li>
+                <li class="header-mob__list-item">
+                  <a href="./index.html" class="header-navbar__menu-item">Главная</a>
+                </li>
+                <li class="header-mob__list-item">
+                  <a href="./articles.html" target="_blank" class="header-navbar__menu-item active">Сохранённые статьи</a>
+                </li>
+                <li class="header-mob__list-item">
+                  <button class="header-navbar__menu-item header-navbar__menu-item_auth">Авторизоваться</button>
+                </li>
+              </ul>
+            </nav>
           </section>
           <section class="header__titles">
             <h1 class="header__titles-title">Что в мире творится?</h1>
@@ -59,7 +76,7 @@
             <div class="card">
               <img src="<%=require('./images/image_04.png')%>" alt="" class="card__img">
               <div class="card__bookmark">
-                <img src="" alt="" class="card__bookmark-pic">
+                <img src="<%=require('./images/rectangle.png')%>" alt="" class="card__bookmark-pic">
               </div>
               <article class="card__content">
                 <time datetime="2019-08-02" class="card__date">2 августа, 2019</time>
@@ -71,7 +88,7 @@
             <div class="card">
               <img src="<%=require('./images/image_08.png')%>" alt="" class="card__img">
               <div class="card__bookmark">
-                <img src="" alt="" class="card__bookmark-pic">
+                <img src="<%=require('./images/rectangle.png')%>" alt="" class="card__bookmark-pic">
               </div>
               <article class="card__content">
                 <time datetime="2019-08-02" class="card__date">2 августа, 2019</time>
@@ -154,7 +171,7 @@
         </div>
       </footer>
 
-      <section class="popup popup__signup">
+      <section class="popup popup__signup ">
         <div class="popup__content">
           <img src="<%=require('./images/close.svg')%>" alt="" class="popup__close popup__close-signup">
           <h3 class="popup__title">Регистрация</h3>
@@ -172,7 +189,7 @@
               <input type="text" name="name" autocomplete="off" required minlength="2" maxlength="30"  class="popup__input" placeholder="Введите своё имя">
               <span class="popup__error error__password"></span>
 
-              <button type name="bttn" class="button popup__button">Зарегистрироваться</button>
+              <button type="submit" name="bttn" class="button popup__button">Зарегистрироваться</button>
 
               <div class="popup__signature">
                 <span class="popup__alternative">или<button class="popup__alternative-button">Войти</button> </span>
@@ -195,7 +212,7 @@
               <input type="text" name="password" autocomplete="off" required minlength="2" maxlength="30"  class="popup__input" placeholder="Введите пароль">
               <span class="popup__error error__password"></span>
 
-              <button type name="bttn" class="button popup__button">Войти</button>
+              <button type="submit" name="bttn" class="button popup__button">Войти</button>
               <div class="popup__signature">
                 <span class="popup__alternative">или <button class="popup__alternative-button">Зарегистрироваться</button> </span>
               </div>

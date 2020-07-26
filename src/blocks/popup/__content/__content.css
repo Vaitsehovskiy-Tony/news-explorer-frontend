@@ -18,3 +18,9 @@
     width: calc(100% - 60px);
   }
 }
+
+@media (min-width: 320px) and (max-width: 450px) {
+  .popup__content {
+    width: 100vw;
+  }
+}

@@ -7,7 +7,7 @@
   padding: 100px 0 0;
 }
 
-@media screen and (max-width: 600px) {
+@media screen and (max-width: 650px) {
   .header-navbar__menu  {
     display: none;
   }
