@@ -1,0 +1,48 @@
+@import url(./__inner-menu/__inner-menu.css);
+@import url(./__menu-item-link/__menu-item-link.css);
+@import url(./__menu-item/__menu-item.css);
+@import url(./__signature/__signature.css);
+@import url(./__social-item-link/__socials-item-link.css);
+@import url(./__socials-item/__socials-item.css);
+@import url(./__socials/__socials.css);
+@import url(./__socials-list/__socials-list.css);
+@import url(./__menu-list/__menu-list.css);
+
+.footer .wrapper {
+
+  display: grid;
+  grid-template-columns: 1fr repeat(2, minmax(min-content, max-content));
+}
+
+.footer {
+  margin: 32px 0 26px;
+}
+@media screen and (max-width: 700px) {
+  .footer .wrapper {
+
+    display: grid;
+    grid-template-rows: 65px;
+  }
+}
+
+@media screen and (max-width: 700px) {
+  .footer {
+    margin: 32px auto 0px;
+  }
+}
+
+
+
+@media screen and (max-width: 450px) {
+  .footer .wrapper {
+
+    display: grid;
+    grid-template-rows: repeat(2, 45px);
+  }
+}
+
+@media screen and (max-width: 450px) {
+  .footer {
+    margin: 32px 0 0px;
+  }
+}

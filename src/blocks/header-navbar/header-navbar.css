@@ -1,0 +1,25 @@
+@import url(./__menu-item/__menu-item.css);
+@import url(./__menu/__menu.css);
+@import url(./__logo-link/__logo-link.css);
+@import url(./__mob-menu-icon/__mob-menu-icon.css);
+@import url(./__underline/__underline.css);
+@import url(./__menu-underline/__menu-underline.css);
+@import url(./__menu-item-pic/__menu-item-pic.css);
+
+.header-navbar {
+  display: grid;
+  grid-template-columns: 1fr max-content;
+
+  justify-content: space-between;
+
+  margin: 30px auto 0;
+
+}
+
+@media screen and (max-width: 600px) {
+  .header-navbar {
+    margin: 10px auto 0;
+
+  }
+}
+

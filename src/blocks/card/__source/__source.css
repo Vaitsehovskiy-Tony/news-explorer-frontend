@@ -1,0 +1,17 @@
+.card__source {
+  font-family: Roboto Slab;
+  font-weight: normal;
+  font-size: 16px;
+  line-height: 125%;
+  letter-spacing: 0.4px;
+
+  color: #B6BCBF;
+
+  margin: 16px 0 0;
+  vertical-align: bottom;
+
+  position: absolute;
+  left: 24px;
+  bottom: 24px;
+
+}
