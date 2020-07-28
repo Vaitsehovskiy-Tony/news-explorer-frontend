@@ -11,8 +11,8 @@ import { PROPS, mainApi, newsApi } from './js/constants/constants';
 
 const { headerRender, headerRenderLogout } = require('./js/utils/headerRender');
 
-const headerButtonAuthorize = document.querySelector('.header__button_authorize');
-const headerButtonName = document.querySelector('.header__button_name');
+const headerbttnAuthorize = document.querySelector('.headr__bttn_authorize');
+const headerbttnName = document.querySelector('.headr__bttn_name');
 
 const searchForm = document.querySelector('.search__form');
 
@@ -44,7 +44,7 @@ popupLinkRegistration.addEventListener('click', () => {
   popupRegistration.open();
 });
 
-headerButtonAuthorize.addEventListener('click', () => {
+headerbttnAuthorize.addEventListener('click', () => {
   popupAuthorize.open();
 });
 
@@ -122,7 +122,7 @@ popupFormAuthorize.addEventListener('submit', (event) => {
     });
 });
 
-headerButtonName.addEventListener('click', () => {
+headerbttnName.addEventListener('click', () => {
   mainApi
     .logout()
     .then((res) => {

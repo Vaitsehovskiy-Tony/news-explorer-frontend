@@ -1,4 +1,4 @@
-.header {
+.headr {
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -9,7 +9,7 @@
   border-bottom: 0.3px solid #fff;
 }
 
-.header__logo {
+.headr__logo {
   margin: 0;
   font-family: RobotoSlab;
   font-style: normal;
@@ -22,7 +22,7 @@
   color: #FFFFFF;
 }
 
-.header__menu {
+.headr__menu {
   margin-top: 30px;
   margin-bottom: 26px;
   font-family: Roboto;
@@ -35,21 +35,17 @@
   color: #FFFFFF;
 }
 
-.header__link {}
-
-/* по умолчанию кнопка Сохр статьи скрыта */
-
-.header__menu.header__menu-articles {
+.headr__menu.headr__menu-articles {
   display: none;
 }
 
 /* показать кнопку Сохраненные статьи */
 
-.header__menu.header__menu-articles.header__menu-articles_is-opened {
+.headr__menu.headr__menu-articles.headr__menu-articles_is-opened {
   display: inline-block;
 }
 
-.header__button {
+.headr__bttn {
   margin-right: 104px;
   border: 1px solid #FFFFFF;
   box-sizing: border-box;
@@ -69,23 +65,23 @@
 
 /* скрыть копку Авторизоваться */
 
-.header__button_authorize.header__button_hidden {
+.headr__bttn_authorize.headr__bttn_hidden {
   display: none;
 }
 
 /* по умолчанию кнопка с именем скрыта */
 
-.header__button.header__button_name {
+.headr__bttn.headr__bttn_name {
   display: none;
 }
 
 /* показать кнопку с именем */
 
-.header__button.header__button_name.header__button_name_is-opened {
+.headr__bttn.headr__bttn_name.headr__bttn_name_is-opened {
   display: inline-block;
 }
 
-.header__menu-320 {
+.headr__menu-320 {
   background: url(../../images/menu-white.png) center no-repeat;
   background-color: transparent;
   border: none;
@@ -98,7 +94,7 @@
   display: none;
 }
 
-.header__close-320 {
+.headr__close-320 {
   background: url(../../images/close320.svg) center no-repeat;
   background-color: transparent;
   border: none;
@@ -112,17 +108,17 @@
 }
 
 @media screen and (min-width:768px) and (max-width:1023px) {
-  .header {
+  .headr {
     height: 66px;
   }
-  .header__logo {
+  .headr__logo {
     margin-left: 40px;
   }
-  .header__link {
+  .headr__link {
     font-size: 16px;
     margin-right: 16px;
   }
-  .header__button {
+  .headr__bttn {
     margin-right: 40px;
     font-size: 16px;
     height: 40px;
@@ -131,12 +127,12 @@
 }
 
 @media screen and (min-width:320px) and (max-width:767px) {
-  .header {
+  .headr {
     background-image: url('../../images/search-320.png');
     height: 56px;
     z-index: 1;
   }
-  .header__logo {
+  .headr__logo {
     font-size: 16px;
     line-height: 24px;
     margin-top: 16px;
@@ -144,11 +140,11 @@
     margin-left: 16px;
     z-index: 10;
   }
-  .header__menu-320 {
+  .headr__menu-320 {
     display: flex;
     z-index: 10;
   }
-  .header__menu {
+  .headr__menu {
     /* z-index: 1; */
     background: #1A1B22;
     width: 100%;
@@ -162,13 +158,13 @@
     padding: 88px 16px 16px;
     display: none;
   }
-  .header__link {
+  .headr__link {
     margin: 0 0 30px;
   }
-  .header__button {
+  .headr__bttn {
     width: calc(100% - 32px);
   }
-  .header__menu.header__menu_is-opened {
+  .headr__menu.headr__menu_is-opened {
     display: flex;
   }
 }
