@@ -10,7 +10,7 @@ export function headerRender(name, isLogged) {
   }
 }
 
-export function headerRenderLogout() {
+function headerRenderLogout() {
   document.querySelector('.headr__menu-articles')
     .classList.remove('headr__menu-articles_is-opened');
   document.querySelector('.headr__bttn_name')
@@ -19,11 +19,13 @@ export function headerRenderLogout() {
     .classList.remove('headr__bttn_hidden');
 }
 
-export function renderAccountButton(name) {
+function renderAccountButton(name) {
   document.querySelector('.headr__bttn_name').textContent = name;
 }
 
-export function renderAccountCount(name, count, word) {
+function renderAccountCount(name, count, word) {
   document.querySelector('.account-info__title').textContent = `${name}, у вас ${count} сохранённых статей`;
   document.querySelector('.account-info__keywords_bold').textContent = `${word}`;
 }
+
+export { headerRenderLogout, renderAccountButton, renderAccountCount };
