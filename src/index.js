@@ -9,28 +9,26 @@ import FormValidator from './js/components/FormValidator';
 
 import { PROPS, mainApi, newsApi } from './js/constants/constants';
 
-const { headerRender, headerRenderLogout } = require('./js/utils/headerRender');
+const { headerRender, headerRenderLogout } = require('./js/utils/render');
 
-const headerbttnAuthorize = document.querySelector('.headr__bttn_authorize');
-const headerbttnName = document.querySelector('.headr__bttn_name');
-
+const headrbttnAuth = document.querySelector('.headr__bttn_authorize');
+const headrbttnName = document.querySelector('.headr__bttn_name');
 const searchForm = document.querySelector('.search__form');
-
-const popupFormAuthorize = document.querySelector('.pop-up__form_authorize');
-const popupFormRegistration = document.querySelector('.pop-up__form_registration');
-const popupLinkRegistration = document.querySelector('.pop-up__link_registration');
-const popupLinkAuthorize = document.querySelector('.pop-up__link_authorize');
+const popupFormAuth = document.querySelector('.pop-up__form_authorize');
+const popupFormRegistr = document.querySelector('.pop-up__form_registration');
+const popupLinkRegistr = document.querySelector('.pop-up__link_registration');
+const popupLinkAuth = document.querySelector('.pop-up__link_authorize');
 const popupLinkLogInAfterSuccessReg = document.querySelector('.pop-up__link_log-in');
 const articlesList = document.querySelector('.articles-list');
 
 const article = new Article();
 const cardList = new ArticleList(articlesList, article);
-const popupAuthorize = new Popup(document.querySelector('.pop-up_authorize'));
-const popupRegistration = new Popup(document.querySelector('.pop-up_registration'));
-const popupSuccessRegistration = new Popup(document.querySelector('.pop-up_success-registration'));
+const popupAuth = new Popup(document.querySelector('.pop-up_authorize'));
+const popupRegistr = new Popup(document.querySelector('.pop-up_registration'));
+const popupSuccessRegistr = new Popup(document.querySelector('.pop-up_success-registration'));
 
-const formVAlidAuthorize = new FormValidator(document.querySelector('.pop-up_authorize'));
-const formVAlidRegistration = new FormValidator(document.querySelector('.pop-up_registration'));
+const formVAlidAuth = new FormValidator(document.querySelector('.pop-up_authorize'));
+const formVAlidRegistr = new FormValidator(document.querySelector('.pop-up_registration'));
 
 window.addEventListener('load', () => {
   console.log(PROPS);
@@ -39,23 +37,23 @@ window.addEventListener('load', () => {
   checkLogged();
 });
 
-popupLinkRegistration.addEventListener('click', () => {
-  popupAuthorize.close();
-  popupRegistration.open();
+popupLinkRegistr.addEventListener('click', () => {
+  popupAuth.close();
+  popupRegistr.open();
 });
 
-headerbttnAuthorize.addEventListener('click', () => {
-  popupAuthorize.open();
+headrbttnAuth.addEventListener('click', () => {
+  popupAuth.open();
 });
 
-popupLinkAuthorize.addEventListener('click', () => {
-  popupRegistration.close();
-  popupAuthorize.open();
+popupLinkAuth.addEventListener('click', () => {
+  popupRegistr.close();
+  popupAuth.open();
 });
 
 popupLinkLogInAfterSuccessReg.addEventListener('click', () => {
-  popupSuccessRegistration.close();
-  popupAuthorize.open();
+  popupSuccessRegistr.close();
+  popupAuth.open();
 });
 
 searchForm.addEventListener('submit', (event) => {
@@ -74,13 +72,13 @@ searchForm.addEventListener('submit', (event) => {
     });
 });
 
-popupFormRegistration.addEventListener('submit', (event) => {
+popupFormRegistr.addEventListener('submit', (event) => {
   event.preventDefault();
   mainApi
     .signUp(
-      popupFormRegistration.email.value,
-      popupFormRegistration.password.value,
-      popupFormRegistration.name.value,
+      popupFormRegistr.email.value,
+      popupFormRegistr.password.value,
+      popupFormRegistr.name.value,
     )
     .then((res) => {
       console.log(55);
@@ -90,30 +88,30 @@ popupFormRegistration.addEventListener('submit', (event) => {
         console.log(res);
         return Promise.reject(res);
       }
-      popupFormRegistration.reset();
-      popupRegistration.close();
-      popupSuccessRegistration.open();
+      popupFormRegistr.reset();
+      popupRegistr.close();
+      popupSuccessRegistr.open();
     })
     .catch((err) => {
       console.log(66);
       console.log(err);
-      popupFormRegistration.querySelector('.pop-up__error').textContent = err.message;
+      popupFormRegistr.querySelector('.pop-up__error').textContent = err.message;
     });
 });
 
-popupFormAuthorize.addEventListener('submit', (event) => {
+popupFormAuth.addEventListener('submit', (event) => {
   event.preventDefault();
   mainApi
     .signIn(
-      popupFormAuthorize.email.value,
-      popupFormAuthorize.password.value,
+      popupFormAuth.email.value,
+      popupFormAuth.password.value,
     )
     .then((res) => {
       console.log(res.data);
       PROPS.isLoggedIn = true;
       console.log(777);
-      popupFormAuthorize.reset();
-      popupAuthorize.close();
+      popupFormAuth.reset();
+      popupAuth.close();
       headerRender(res.data, PROPS.isLoggedIn);
     })
     .catch((err) => {
@@ -122,7 +120,7 @@ popupFormAuthorize.addEventListener('submit', (event) => {
     });
 });
 
-headerbttnName.addEventListener('click', () => {
+headrbttnName.addEventListener('click', () => {
   mainApi
     .logout()
     .then((res) => {
