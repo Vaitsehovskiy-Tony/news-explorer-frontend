@@ -6,14 +6,14 @@ const PROPS = {
 };
 
 const mainApi = new MainApi({
-  baseUrl: 'https://myownnews.ru.com/',
+  baseUrl: 'https://myownnews.ru.com/api',
   headers: {
     'Content-Type': 'application/json',
   },
 });
 
 const newsApi = new NewsApi({
-  baseUrl: 'https://newsapi.org/v2/everything?pageSize=10&apiKey=6aa47727b1b54808b0244a1d2c266dab&',
+  baseUrl: 'https://newsapi.org/v2/everything?pageSize=20&apiKey=6aa47727b1b54808b0244a1d2c266dab&',
   headers: {
     'Content-Type': 'application/json',
   },
