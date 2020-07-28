@@ -1,9 +1,9 @@
-.popup__title {
+.pop-up__title {
   margin: 0;
   font-size: 24px;
   line-height: 30px;
 }
 
-.popup__title_success-registration {
+.pop-up__title_success-registration {
   margin-bottom: 14px;
 }

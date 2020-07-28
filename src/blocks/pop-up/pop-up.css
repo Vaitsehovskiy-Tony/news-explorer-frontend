@@ -1,14 +1,14 @@
-@import url(./__content/popup__content.css);
-@import url(./__close/popup__close.css);
-@import url(./__title/popup__title.css);
-@import url(./__form/popup__form.css);
-@import url(./__input/popup__input.css);
-@import url(./__error/popup__error.css);
-@import url(./__bttn/popup__bttn.css);
-@import url(./__choice/popup__choice.css);
-@import url(./_is-opened/popup_is-opened.css);
+@import url(./__content/pop-up__content.css);
+@import url(./__close/pop-up__close.css);
+@import url(./__title/pop-up__title.css);
+@import url(./__form/pop-up__form.css);
+@import url(./__input/pop-up__input.css);
+@import url(./__error/pop-up__error.css);
+@import url(./__bttn/pop-up__bttn.css);
+@import url(./__choice/pop-up__choice.css);
+@import url(./_is-opened/pop-up_is-opened.css);
 
-.popup_authorize {
+.pop-up_authorize {
   position: fixed;
   top: 0;
   left: 0;
@@ -21,7 +21,7 @@
   display: none;
 }
 
-.popup__close_image {
+.pop-up__close_image {
   width: 26px;
   position: absolute;
   top: -26px;
@@ -29,7 +29,7 @@
   cursor: pointer;
 }
 
-.popup_registration {
+.pop-up_registration {
   position: fixed;
   top: 0;
   left: 0;
@@ -42,7 +42,7 @@
   display: none;
 }
 
-.popup_success-registration {
+.pop-up_success-registration {
   position: fixed;
   top: 0;
   left: 0;

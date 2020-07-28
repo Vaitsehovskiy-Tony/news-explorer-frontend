@@ -1,0 +1,11 @@
+.pop-up_authorize.pop-up_is-opened {
+  display: flex;
+}
+
+.pop-up_registration.pop-up_is-opened {
+  display: flex;
+}
+
+.pop-up_success-registration.pop-up_is-opened {
+  display: flex;
+}

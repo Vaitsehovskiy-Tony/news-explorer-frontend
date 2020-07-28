@@ -1,4 +1,4 @@
-.popup__content {
+.pop-up__content {
   width: 430px;
   min-height: 330px;
   background-color: #fff;
@@ -8,12 +8,12 @@
   padding: 34px 36px;
 }
 
-.popup__content_success-registration {
+.pop-up__content_success-registration {
   min-height: 182px;
 }
 
 @media screen and (max-width: 540px) {
-  .popup__content {
+  .pop-up__content {
     width: calc(100% - 60px);
   }
 }

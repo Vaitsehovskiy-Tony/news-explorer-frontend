@@ -1,26 +1,26 @@
 export function headerRender(name, isLogged) {
   if (isLogged) {
-    document.querySelector('.header__menu-articles')
-      .classList.add('header__menu-articles_is-opened');
-    document.querySelector('.header__button_name')
-      .classList.add('header__button_name_is-opened');
-    document.querySelector('.header__button_name').textContent = name;
-    document.querySelector('.header__button_authorize')
-      .classList.add('header__button_hidden');
+    document.querySelector('.headr__menu-articles')
+      .classList.add('headr__menu-articles_is-opened');
+    document.querySelector('.headr__button_name')
+      .classList.add('headr__button_name_is-opened');
+    document.querySelector('.headr__button_name').textContent = name;
+    document.querySelector('.headr__button_authorize')
+      .classList.add('headr__button_hidden');
   }
 }
 
 export function headerRenderLogout() {
-  document.querySelector('.header__menu-articles')
-    .classList.remove('header__menu-articles_is-opened');
-  document.querySelector('.header__button_name')
-    .classList.remove('header__button_name_is-opened');
-  document.querySelector('.header__button_authorize')
-    .classList.remove('header__button_hidden');
+  document.querySelector('.headr__menu-articles')
+    .classList.remove('headr__menu-articles_is-opened');
+  document.querySelector('.headr__button_name')
+    .classList.remove('headr__button_name_is-opened');
+  document.querySelector('.headr__button_authorize')
+    .classList.remove('headr__button_hidden');
 }
 
 export function renderAccountButton(name) {
-  document.querySelector('.header__button_name').textContent = name;
+  document.querySelector('.headr__button_name').textContent = name;
 }
 
 export function renderAccountCount(name, count, word) {

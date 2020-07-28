@@ -1,4 +1,4 @@
-.popup__choice {
+.pop-up__choice {
   font-family: Inter;
   font-style: normal;
   font-weight: normal;
@@ -9,7 +9,7 @@
   text-decoration: none;
 }
 
-.popup__link {
+.pop-up__link {
   font-family: Inter;
   font-style: normal;
   font-weight: normal;

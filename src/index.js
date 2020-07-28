@@ -16,21 +16,21 @@ const headerbttnName = document.querySelector('.headr__bttn_name');
 
 const searchForm = document.querySelector('.search__form');
 
-const popupFormAuthorize = document.querySelector('.popup__form_authorize');
-const popupFormRegistration = document.querySelector('.popup__form_registration');
-const popupLinkRegistration = document.querySelector('.popup__link_registration');
-const popupLinkAuthorize = document.querySelector('.popup__link_authorize');
-const popupLinkLogInAfterSuccessReg = document.querySelector('.popup__link_log-in');
+const popupFormAuthorize = document.querySelector('.pop-up__form_authorize');
+const popupFormRegistration = document.querySelector('.pop-up__form_registration');
+const popupLinkRegistration = document.querySelector('.pop-up__link_registration');
+const popupLinkAuthorize = document.querySelector('.pop-up__link_authorize');
+const popupLinkLogInAfterSuccessReg = document.querySelector('.pop-up__link_log-in');
 const articlesList = document.querySelector('.articles-list');
 
 const article = new Article();
 const cardList = new ArticleList(articlesList, article);
-const popupAuthorize = new Popup(document.querySelector('.popup_authorize'));
-const popupRegistration = new Popup(document.querySelector('.popup_registration'));
-const popupSuccessRegistration = new Popup(document.querySelector('.popup_success-registration'));
+const popupAuthorize = new Popup(document.querySelector('.pop-up_authorize'));
+const popupRegistration = new Popup(document.querySelector('.pop-up_registration'));
+const popupSuccessRegistration = new Popup(document.querySelector('.pop-up_success-registration'));
 
-const formVAlidAuthorize = new FormValidator(document.querySelector('.popup_authorize'));
-const formVAlidRegistration = new FormValidator(document.querySelector('.popup_registration'));
+const formVAlidAuthorize = new FormValidator(document.querySelector('.pop-up_authorize'));
+const formVAlidRegistration = new FormValidator(document.querySelector('.pop-up_registration'));
 
 window.addEventListener('load', () => {
   console.log(PROPS);
@@ -97,7 +97,7 @@ popupFormRegistration.addEventListener('submit', (event) => {
     .catch((err) => {
       console.log(66);
       console.log(err);
-      popupFormRegistration.querySelector('.popup__error').textContent = err.message;
+      popupFormRegistration.querySelector('.pop-up__error').textContent = err.message;
     });
 });
 

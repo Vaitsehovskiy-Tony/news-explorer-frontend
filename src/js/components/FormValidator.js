@@ -26,12 +26,12 @@ export default class FormValidator {
   setSubmitButtonState(form, button) {
     if (form.checkValidity()) {
       button.removeAttribute('disabled');
-      button.classList.remove('button_disabled');
+      button.classList.remove('bttn_disabled');
       return;
     }
     if (!form.checkValidity()) {
       button.setAttribute('disabled', true);
-      button.classList.add('button_disabled');
+      button.classList.add('bttn_disabled');
     }
   }
 
@@ -44,6 +44,6 @@ export default class FormValidator {
   }
 
   setError(err) {
-    this.form.querySelector('.popup__error').textContent = err;
+    this.form.querySelector('.pop-up__error').textContent = err;
   }
 }

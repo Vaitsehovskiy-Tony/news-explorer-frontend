@@ -6,7 +6,7 @@
 @import url(../blocks/results/results.css);
 @import url(../blocks/articles-list/articles-list.css);
 @import url(../blocks/article-card/article-card.css);
-@import url(../blocks/popup/popup.css);
+@import url(../blocks/pop-up/pop-up.css);
 @import url(../blocks/footer/footer.css);
 
 
@@ -23,7 +23,7 @@ body {
   border-bottom: 0.5px solid rgba(26, 27, 34, 0.5);
 }
 
-.headr__button.header__button_name {
+.headr__button.headr__button_name {
   display: inline-block;
 }
 
