@@ -1,0 +1,58 @@
+.account-info {
+  width: calc(100% - 208px);
+  margin: auto;
+}
+
+.account-info__subtitle {
+  font-family: Roboto;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 18px;
+  line-height: 24px;
+  color: rgba(26, 27, 34, 0.5);
+  margin: 0 0 28px 0;
+}
+
+.account-info__title {
+  width: 530px;
+  font-family: RobotoSlab;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 40px;
+  line-height: 46px;
+  color: #1A1B22;
+  margin: 0 0 30px 0;
+}
+
+.account-info__keywords {
+  font-family: Roboto;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 18px;
+  line-height: 24px;
+  color: #1A1B22;
+  margin: 0 0 56px 0;
+}
+
+.account-info__keywords_bold {
+  font-family: roboto-black;
+}
+
+@media screen and (min-width:768px) and (max-width:1023px) {
+  .account-info__subtitle {
+    font-size: 14px;
+    line-height: 24px;
+    margin: 0 0 16px 0;
+  }
+  .account-info__title {
+    width: 336px;
+    font-size: 30px;
+    line-height: 34px;
+    margin: 0 0 16px 0;
+  }
+  .account-info__keywords {
+    font-size: 14px;
+    line-height: 24px;
+    margin: 0 0 32px 0;
+  }
+}

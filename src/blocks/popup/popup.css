@@ -1,17 +1,56 @@
-@import url(./__content/__content.css);
-@import url(./__close/__close.css);
-@import url(./__title/__title.css);
-@import url(./__form/__form.css);
-@import url(./__input/__input.css);
-@import url(./__button/__button.css);
-@import url(./_is-opened/_is-opened.css);
-@import url(./__signin/__signin.css);
-@import url(./__error/__error.css);
-@import url(./__signup/__signup.css);
-@import url(./__signup-ok/__signup-ok.css);
-@import url(./__input-name/__input-name.css);
-@import url(./__alternative-button/__alternative-button.css);
-@import url(./__alternative/__alternative.css);
-@import url(./__signature/__signature.css);
+@import url(./__content/popup__content.css);
+@import url(./__close/popup__close.css);
+@import url(./__title/popup__title.css);
+@import url(./__form/popup__form.css);
+@import url(./__input/popup__input.css);
+@import url(./__error/popup__error.css);
+@import url(./__button/popup__button.css);
+@import url(./__choice/popup__choice.css);
+@import url(./_is-opened/popup_is-opened.css);
 
+.popup_authorize {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, .5);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  display: none;
+}
 
+.popup__close_image {
+  width: 26px;
+  position: absolute;
+  top: -26px;
+  right: -26px;
+  cursor: pointer;
+}
+
+.popup_registration {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, .5);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  display: none;
+}
+
+.popup_success-registration {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, .5);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  display: none;
+}

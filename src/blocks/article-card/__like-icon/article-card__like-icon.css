@@ -1,0 +1,48 @@
+.article-card__like-icon {
+  background: url(../../../images/bookmark-grey.png) center no-repeat;
+  background-color: transparent;
+  border: none;
+  width: 40px;
+  height: 40px;
+  cursor: pointer;
+  transition: transform .3s linear;
+  margin-bottom: 3px;
+  position: absolute;
+  top: 24px;
+  right: 24px;
+}
+
+.article-card__like-icon_liked {
+  background-image: url(../../../images/bookmark-saved.png);
+}
+
+.article-card__like-icon:hover {
+  background-image: url(../../../images/bookmark-hover.png);
+}
+
+.article-card__like-icon:hover:after {
+  content: "Войдите, чтобы сохранять статьи";
+  width: 182px;
+  font-family: Roboto, Arial, Helvetica, sans-serif;
+  font-style: normal;
+  font-weight: 500;
+  font-size: 10px;
+  line-height: 12px;
+  text-align: center;
+  color: #000;
+  background: #fff;
+  box-shadow: 0px 10px 22px rgba(59, 74, 116, 0.1);
+  border-radius: 10px;
+  padding: 16px 0 16px;
+  position: absolute;
+  top: 0px;
+  left: -187px;
+  cursor: none;
+}
+
+@media screen and (min-width:768px) and (max-width:1023px) {
+  .article-card__like-icon {
+    top: 8px;
+    right: 8px;
+  }
+}

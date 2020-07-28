@@ -1,0 +1,57 @@
+@import url(../vendor/fonts.css);
+@import url(../vendor/modern-reset.css);
+@import url(../blocks/header/header.css);
+@import url(../blocks/account-info/account-info.css);
+@import url(../blocks/button/button__exit.css);
+@import url(../blocks/results/results.css);
+@import url(../blocks/articles-list/articles-list.css);
+@import url(../blocks/article-card/article-card.css);
+@import url(../blocks/popup/popup.css);
+@import url(../blocks/footer/footer.css);
+
+
+body {
+  margin: 0;
+}
+
+.root {
+  font-family: 'Inter', Arial, Helvetica, sans-serif;
+  color: #1A1B22;
+}
+
+.header {
+  border-bottom: 0.5px solid rgba(26, 27, 34, 0.5);
+}
+
+.header__button.header__button_name {
+  display: inline-block;
+}
+
+.header_font-black {
+  color: #1A1B22;
+}
+
+.header__button_black {
+  border: 1px solid #1A1B22;
+}
+
+.header.header_without-img {
+  background-image: none;
+  margin-bottom: 40px;
+}
+
+.header__link.header__link_articles a {
+  color: #1A1B22;
+}
+
+.section-title {
+  font-family: RobotoSlab;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 40px;
+  line-height: 46px;
+}
+
+.section-title_results {
+  margin: 0 0 64px;
+}
