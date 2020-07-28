@@ -23,7 +23,7 @@ body {
   border-bottom: 0.5px solid rgba(26, 27, 34, 0.5);
 }
 
-.headr__button.headr__button_name {
+.headr__bttn.headr__bttn_name {
   display: inline-block;
 }
 
@@ -31,7 +31,7 @@ body {
   color: #1A1B22;
 }
 
-.headr__button_black {
+.headr__bttn_black {
   border: 1px solid #1A1B22;
 }
 

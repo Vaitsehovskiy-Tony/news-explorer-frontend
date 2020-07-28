@@ -5,9 +5,9 @@ import ArticleSaved from '../js/components/ArticleSaved';
 import ArticleList from '../js/components/ArticleList';
 import { PROPS, mainApi } from '../js/constants/constants';
 
-const { renderAccountButton, renderAccountCount } = require('../js/utils/headerRender');
+const { renderAccountButton, renderAccountCount } = require('../js/utils/render');
 
-const headerButtonName = document.querySelector('.header__button_name');
+const headerButtonName = document.querySelector('.headr__bttn_name');
 
 const articlesList = document.querySelector('.articles-list');
 const savedArticle = new ArticleSaved();

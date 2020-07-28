@@ -11,6 +11,56 @@ export default class MainApi {
     return res.json();
   }
 
+  signUp(email, password, name) {
+    return fetch(`${this.options.baseUrl}/signup`, {
+      method: 'POST',
+      headers: {
+        authorization: this.options.headers.authorization,
+        'Content-Type': 'application/json',
+      },
+      credentials: 'include',
+      body: JSON.stringify({
+        email,
+        password,
+        name,
+      }),
+    })
+      .then((res) => this._getResponseData(res));
+  }
+
+  logout() {
+    return fetch(`${this.options.baseUrl}/logout`, {
+      method: 'DELETE',
+      headers: {
+        authorization: this.options.headers.authorization,
+        'Content-Type': 'application/json',
+      },
+      credentials: 'include',
+    })
+      .then((res) => {
+        if (!res.ok) {
+          return Promise.resolve(res);
+        }
+        return res;
+      });
+  }
+
+  signIn(email, password) {
+    return fetch(`${this.options.baseUrl}/signin`, {
+      method: 'POST',
+      headers: {
+        authorization: this.options.headers.authorization,
+        'Content-Type': 'application/json',
+      },
+      credentials: 'include',
+      body: JSON.stringify({
+        email,
+        password,
+      }),
+    })
+      .then((res) => this._getResponseData(res));
+  }
+
   getArticles() {
     return fetch(`${this.options.baseUrl}/articles`, {
       method: 'GET',
@@ -51,56 +101,6 @@ export default class MainApi {
       },
       credentials: 'include',
     }).then((res) => this._getResponseData(res));
-  }
-
-  signUp(email, password, name) {
-    return fetch(`${this.options.baseUrl}/signup`, {
-      method: 'POST',
-      headers: {
-        authorization: this.options.headers.authorization,
-        'Content-Type': 'application/json',
-      },
-      credentials: 'include',
-      body: JSON.stringify({
-        email,
-        password,
-        name,
-      }),
-    })
-      .then((res) => this._getResponseData(res));
-  }
-
-  signIn(email, password) {
-    return fetch(`${this.options.baseUrl}/signin`, {
-      method: 'POST',
-      headers: {
-        authorization: this.options.headers.authorization,
-        'Content-Type': 'application/json',
-      },
-      credentials: 'include',
-      body: JSON.stringify({
-        email,
-        password,
-      }),
-    })
-      .then((res) => this._getResponseData(res));
-  }
-
-  logout() {
-    return fetch(`${this.options.baseUrl}/logout`, {
-      method: 'DELETE',
-      headers: {
-        authorization: this.options.headers.authorization,
-        'Content-Type': 'application/json',
-      },
-      credentials: 'include',
-    })
-      .then((res) => {
-        if (!res.ok) {
-          return Promise.resolve(res);
-        }
-        return res;
-      });
   }
 
   getUserInfo() {
