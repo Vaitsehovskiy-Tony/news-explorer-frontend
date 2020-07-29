@@ -18,7 +18,6 @@ export default class MainApi {
         authorization: this.options.headers.authorization,
         'Content-Type': 'application/json',
       },
-      credentials: 'include',
       body: JSON.stringify({
         email,
         password,
@@ -36,6 +35,7 @@ export default class MainApi {
         'Content-Type': 'application/json',
       },
       credentials: 'include',
+      withCredentials: true,
     })
       .then((res) => {
         if (!res.ok) {
@@ -52,7 +52,6 @@ export default class MainApi {
         authorization: this.options.headers.authorization,
         'Content-Type': 'application/json',
       },
-      credentials: 'include',
       body: JSON.stringify({
         email,
         password,
@@ -68,6 +67,7 @@ export default class MainApi {
         authorization: this.options.headers.authorization,
       },
       credentials: 'include',
+      withCredentials: true,
     })
       .then((res) => this._getResponseData(res));
   }
@@ -80,6 +80,7 @@ export default class MainApi {
         'Content-Type': 'application/json',
       },
       credentials: 'include',
+      withCredentials: true,
       body: JSON.stringify({
         keyword,
         title,
@@ -100,6 +101,7 @@ export default class MainApi {
         authorization: this.options.headers.authorization,
       },
       credentials: 'include',
+      withCredentials: true,
     }).then((res) => this._getResponseData(res));
   }
 
@@ -107,6 +109,7 @@ export default class MainApi {
     return fetch(`${this.options.baseUrl}/users/me`, {
       method: 'GET',
       credentials: 'include',
+      withCredentials: true,
       headers: {
         authorization: this.options.headers.authorization,
       },

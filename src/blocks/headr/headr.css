@@ -39,8 +39,6 @@
   display: none;
 }
 
-/* показать кнопку Сохраненные статьи */
-
 .headr__menu.headr__menu-articles.headr__menu-articles_is-opened {
   display: inline-block;
 }
@@ -58,24 +56,19 @@
   font-weight: 500;
   font-size: 18px;
   line-height: 24px;
-  /* width: 176px; */
   height: 48px;
   padding: 12px;
 }
 
-/* скрыть копку Авторизоваться */
 
 .headr__bttn_authorize.headr__bttn_hidden {
   display: none;
 }
 
-/* по умолчанию кнопка с именем скрыта */
 
 .headr__bttn.headr__bttn_name {
   display: none;
 }
-
-/* показать кнопку с именем */
 
 .headr__bttn.headr__bttn_name.headr__bttn_name_is-opened {
   display: inline-block;
@@ -145,7 +138,6 @@
     z-index: 10;
   }
   .headr__menu {
-    /* z-index: 1; */
     background: #1A1B22;
     width: 100%;
     border-radius: 16px;

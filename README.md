@@ -3,7 +3,7 @@
 
 # Бэкенд веб-приложения News Explorer
 
-#### URL backend https://myownnews.ru.com/api
+#### URL backend https://myownnews.ru.com
 #### URL frontend  https://vaitsehovskiy-tony.github.io/news-explorer-frontend/
 
 ### Установка

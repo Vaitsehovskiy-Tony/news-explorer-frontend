@@ -6,7 +6,7 @@ export const PROPS = {
 };
 
 export const mainApi = new MainApi({
-  baseUrl: 'https://www.myownnews.ru.com/api/',
+  baseUrl: 'https://myownnews.ru.com',
   headers: {
     'Content-Type': 'application/json',
   },
