@@ -60,6 +60,14 @@
   padding: 12px;
 }
 
+.headr__img-logout {
+  width: 16px;
+  margin-left: 10px;
+}
+
+.header__button.header__button_logout.header__user-name_is-opened {
+  display: inline-block;
+}
 
 .headr__bttn_authorize.headr__bttn_hidden {
   display: none;

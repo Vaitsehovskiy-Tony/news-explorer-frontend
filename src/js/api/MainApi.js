@@ -8,6 +8,7 @@ export default class MainApi {
     if (!res.ok) {
       return Promise.resolve(res.json());
     }
+    console.log(res.json);
     return res.json();
   }
 
@@ -57,7 +58,12 @@ export default class MainApi {
         password,
       }),
     })
-      .then((res) => this._getResponseData(res));
+      .then((res) => {
+        console.log(res.json);
+        console.log(res.data);
+        console.log(res);
+        this._getResponseData(res.data);
+      });
   }
 
   getArticles() {

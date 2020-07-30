@@ -1,10 +1,11 @@
-export function headerRender(name, isLogged) {
+function headerRender(name, isLogged) {
   if (isLogged) {
     document.querySelector('.headr__menu-articles')
       .classList.add('headr__menu-articles_is-opened');
     document.querySelector('.headr__bttn_name')
       .classList.add('headr__bttn_name_is-opened');
-    document.querySelector('.headr__bttn_name').textContent = name;
+    // имя не появляется
+    document.querySelector('.headr__user-name').textContent = name;
     document.querySelector('.headr__bttn_authorize')
       .classList.add('headr__bttn_hidden');
   }
@@ -28,4 +29,4 @@ function renderAccountCount(name, count, word) {
   document.querySelector('.account-info__keywords_bold').textContent = `${word}`;
 }
 
-export { headerRenderLogout, renderAccountButton, renderAccountCount };
+export { headerRender, headerRenderLogout, renderAccountButton, renderAccountCount };

@@ -9,7 +9,7 @@ import FormValidator from './js/components/FormValidator';
 
 import { PROPS, mainApi, newsApi } from './js/constants/constants';
 
-const { headerRender, headerRenderLogout } = require('./js/utils/render');
+const { headerRender, headerRenderLogout, renderAccountButton, renderAccountCount } = require('./js/utils/render');
 
 const headrbttnAuth = document.querySelector('.headr__bttn_authorize');
 const headrbttnName = document.querySelector('.headr__bttn_name');
@@ -112,7 +112,7 @@ popupFormAuth.addEventListener('submit', (event) => {
       console.log(777);
       popupFormAuth.reset();
       popupAuth.close();
-      headerRender(res.data, PROPS.isLoggedIn);
+      headerRender(res.data.name, PROPS.isLoggedIn);
     })
     .catch((err) => {
       console.log(888);
