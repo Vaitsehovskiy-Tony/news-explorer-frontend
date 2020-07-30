@@ -112,7 +112,7 @@ popupFormAuth.addEventListener('submit', (event) => {
       console.log(777);
       popupFormAuth.reset();
       popupAuth.close();
-      headerRender(res.data.name, PROPS.isLoggedIn);
+      headerRender(res.data, PROPS.isLoggedIn);
     })
     .catch((err) => {
       console.log(888);

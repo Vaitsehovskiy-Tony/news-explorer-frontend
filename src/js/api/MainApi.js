@@ -53,17 +53,13 @@ export default class MainApi {
         authorization: this.options.headers.authorization,
         'Content-Type': 'application/json',
       },
+      credentials: 'include',
       body: JSON.stringify({
         email,
         password,
       }),
     })
-      .then((res) => {
-        console.log(res.json);
-        console.log(res.data);
-        console.log(res);
-        this._getResponseData(res.data);
-      });
+      .then((res) => this._getResponseData(res));
   }
 
   getArticles() {
