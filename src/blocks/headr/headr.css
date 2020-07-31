@@ -60,8 +60,11 @@
   padding: 12px;
 }
 
+
 .headr__img-logout {
   width: 16px;
+  height: 16px;
+  display: inline-block;
   margin-left: 10px;
 }
 
@@ -81,7 +84,6 @@
 .headr__bttn.headr__bttn_name.headr__bttn_name_is-opened {
   display: inline-block;
 }
-
 .headr__menu-320 {
   background: url(../../images/menu-white.png) center no-repeat;
   background-color: transparent;

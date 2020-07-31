@@ -18,15 +18,16 @@ window.addEventListener('load', () => {
     .then(
       ([articles, userData]) => {
         // отрисовка хедера
-        renderAccountButton(userData.name);
+        console.log(userData);
+        renderAccountButton(userData.data.name);
 
-        if (articles.articles.length > 0) {
+        if (articles.data.length > 0) {
           // имя, у вас 5 сохранённых статей
-          renderAccountCount(userData.name, articles.articles.length, articles.articles[0].keyword);
+          renderAccountCount(userData.data.name, articles.data.length, articles.data[0].keyword);
           // показать секцию Результаты поиска
           document.querySelector('.results')
             .classList.add('results_is-opened');
-          savedArticlesList.render(articles.articles);
+          savedArticlesList.render(articles.data);
           // Если articles.articles.length === 2, то передать 2е слово
         } else {
           console.log('У вас нет сохраненных статей');

@@ -13,7 +13,7 @@ export const mainApi = new MainApi({
 });
 
 export const newsApi = new NewsApi({
-  baseUrl: 'https://newsapi.org/v2/everything?pageSize=20&apiKey=6aa47727b1b54808b0244a1d2c266dab&',
+  baseUrl: 'https://praktikum.tk/news/v2/everything?language=ru&apiKey=6aa47727b1b54808b0244a1d2c266dab&',
   headers: {
     'Content-Type': 'application/json',
   },

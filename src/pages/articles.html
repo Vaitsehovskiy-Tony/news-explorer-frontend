@@ -18,9 +18,11 @@
       <header class="headr headr_without-img">
         <p class="headr__logo headr_font-black">NewsExplorer</p>
         <div class="headr__menu">
-          <a class="headr__link headr_font-black" href="./index.html">Главная</a>
-          <a class="headr__link headr_font-black" href="./articles.html">Сохранённые статьи</a>
-          <button class="headr__bttn headr__bttn_name headr_font-black headr__bttn_black"><img class="headr__img-logout" src="<%=require('../images/exit1440black.svg').default%>"
+          <a class="headr__link headr_font-black headr__menu" href="./index.html">Главная</a>
+          <a class="headr__link headr_font-black headr__menu" href="./articles.html">Сохранённые статьи</a>
+          <button class="headr__bttn headr__bttn_name headr_font-black headr__bttn_black headr__menu">
+            <span class="headr__user-name"></span>
+            <img class="headr__img-logout" src="<%=require('../images/exit1440black.svg').default%>"
             alt="headr__img-logout"></button>
         </div>
       </header>
@@ -34,6 +36,12 @@
 
       <section class="results results_saved-articles root__section">
         <div class="articles-list root__section"></div>
+
+
+        <div class="results__nothing ">
+          <p class="results__regret-text">У вас нет сохраненных статей</p>
+        </div>
+
       </section>
 
       <footer class="footer">

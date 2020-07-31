@@ -2,6 +2,18 @@
 /* eslint-disable no-unused-vars */
 import './css/style.css';
 
+// готово
+// 1. После signin нужно сделать запрос на users/me
+// 2. logout падает с ошибкой, именно сам запрос
+// 3. Запрос на статьи падает, так как идешь не на прокси
+// 4. Попап авторизации закрывается, но по факту авторизация не работает(нет имени)
+// 5. Не работает букмарк
+
+// 0. При ЛогИне вылезает ошибка, при втором заходе ауф проходит
+// 6. При регистрации, если емейл существует приложение падает с ошибкой
+// 7. Не работают темы сохраненных статей
+// 8. Не работает смена секций результатов - ничего не найдено, идет поиск и тд
+
 import Article from './js/components/Article';
 import ArticleList from './js/components/ArticleList';
 import Popup from './js/components/Popup';
@@ -9,7 +21,7 @@ import FormValidator from './js/components/FormValidator';
 
 import { PROPS, mainApi, newsApi } from './js/constants/constants';
 
-const { headerRender, headerRenderLogout, renderAccountButton, renderAccountCount } = require('./js/utils/render');
+const { headerRender, headerRenderLogout } = require('./js/utils/render');
 
 const headrbttnAuth = document.querySelector('.headr__bttn_authorize');
 const headrbttnName = document.querySelector('.headr__bttn_name');
@@ -105,14 +117,20 @@ popupFormAuth.addEventListener('submit', (event) => {
     .signIn(
       popupFormAuth.email.value,
       popupFormAuth.password.value,
-    )
+    );
+  mainApi
+    .getUserInfo()
     .then((res) => {
-      console.log(res.data);
+      console.log(res);
       PROPS.isLoggedIn = true;
       console.log(777);
       popupFormAuth.reset();
       popupAuth.close();
-      headerRender(res.data, PROPS.isLoggedIn);
+      mainApi.getUserInfo(res);
+      console.log(8080);
+      console.log(res);
+      console.log(res.data);
+      headerRender(res.data.name, PROPS.isLoggedIn);
     })
     .catch((err) => {
       console.log(888);
@@ -135,6 +153,7 @@ headrbttnName.addEventListener('click', () => {
 
 articlesList.addEventListener('click', (event) => {
   if (event.target.classList.contains('article-card__like-icon')) {
+    console.log('click прошёл');
     mainApi
       .postArticle(
         event.target
@@ -148,7 +167,7 @@ articlesList.addEventListener('click', (event) => {
         event.target.closest('.article-card').querySelector('.article-card__image').style.backgroundImage.slice(5, -2),
       )
       .then((data) => {
-        console.log(data);
+        console.log('карточка сохранена');
         article.like(event);
       })
       .catch((err) => {
@@ -169,6 +188,24 @@ articlesList.addEventListener('click', (event) => {
   }
 });
 
+articlesList.addEventListener('mouseover', (event) => {
+  if (event.target.classList.contains('article-card__like-icon') && !PROPS.isLoggedIn) {
+    event.target.closest('.article-card')
+      .querySelector('.article-card__help-container')
+      .classList
+      .add('article-card__help-container_is-opened');
+  }
+});
+
+articlesList.addEventListener('mouseout', (event) => {
+  if (event.target.classList.contains('article-card__like-icon') && !PROPS.isLoggedIn) {
+    event.target.closest('.article-card')
+      .querySelector('.article-card__help-container')
+      .classList
+      .remove('article-card__help-container_is-opened');
+  }
+});
+
 function checkLogged() {
   mainApi.getUserInfo()
     .then((res) => {
@@ -181,7 +218,7 @@ function checkLogged() {
       console.log(res);
       PROPS.isLoggedIn = true;
       console.log(PROPS.isLoggedIn);
-      headerRender(res.name, PROPS.isLoggedIn);
+      headerRender(res.data.name, PROPS.isLoggedIn);
     })
     .catch((err) => {
       console.log(1001);

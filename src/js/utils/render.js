@@ -21,7 +21,7 @@ function headerRenderLogout() {
 }
 
 function renderAccountButton(name) {
-  document.querySelector('.headr__bttn_name').textContent = name;
+  document.querySelector('.headr__user-name').textContent = name;
 }
 
 function renderAccountCount(name, count, word) {

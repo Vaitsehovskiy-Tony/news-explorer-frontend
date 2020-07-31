@@ -30,13 +30,8 @@ export default class MainApi {
 
   logout() {
     return fetch(`${this.options.baseUrl}/logout`, {
-      method: 'DELETE',
-      headers: {
-        authorization: this.options.headers.authorization,
-        'Content-Type': 'application/json',
-      },
+      method: 'POST',
       credentials: 'include',
-      withCredentials: true,
     })
       .then((res) => {
         if (!res.ok) {
