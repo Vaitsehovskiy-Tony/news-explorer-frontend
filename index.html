@@ -9,7 +9,7 @@
   <title>Сервис поиска новостей</title>
   <link rel="shortcut icon" type="image/x-icon" sizes="16x16"
     href="./images/favicon-N-16x16.png">
-  <link rel="stylesheet" href="style/main.6ca919326aa579f3f022.css">
+  <link rel="stylesheet" href="style/main.f6bd18c47ebe793df0a9.css">
 </head>
 
 <body>
@@ -24,8 +24,9 @@
           <a class=" headr__menu-articles headr__menu" href="./articles.html">Сохранённые статьи</a>
           <button class=" headr__bttn_authorize headr__bttn">Авторизоваться</button>
           <button class=" headr__bttn_name headr__bttn">
-            <img class="bttn__exit"
-              src="./images/exit1440white.svg" alt="bttn__exit">
+            <span class="headr__user-name"></span>
+            <img class="headr__img-logout" src="./images/exit1440white.svg"
+              alt="headr__img-logout">
           </button>
         </div>
       </header>
@@ -55,6 +56,17 @@
         <div class=" root__section articles-list">
         </div>
         <button class="results__bttn">Показать еще</button>
+
+        <div class="results__searching">
+          <i class="circle-preloader"></i>
+          <p class="results__searching-text">Идёт поиск новостей...</p>
+        </div>
+
+        <div class="results__nothing">
+          <p class="results__regret-text">Ничего не найдено</p>
+          <p class="results__searching-text">К сожалению по вашему запросу
+            ничего не найдено.</p>
+        </div>
 
       </section>
 
@@ -158,7 +170,7 @@
     </main>
 
   </div>
-  <script type="module" src="./js/main.f7fd0a82bbbc8d755de0.js"></script>
+  <script type="module" src="./js/main.382bfe73b0da8ed627bc.js"></script>
 </body>
 
 </html>
