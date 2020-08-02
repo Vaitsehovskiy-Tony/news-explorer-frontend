@@ -177,21 +177,16 @@ popupFormAuth.addEventListener('submit', (event) => {
     popupFormAuth.password.value,
   )
     .then((res) => {
-      console.log(res);
       PROPS.isLoggedIn = true;
-      console.log(777);
+      console.log(res);
+      console.log('auth token');
       popupFormAuth.reset();
       popupAuth.close();
+      mainApi.getUserInfo()
+        .then((info) => headerRender(info.data.name, PROPS.isLoggedIn))
+        .catch((err) => console.log('getUserInfo err'));
     })
     .catch((err) => {
-      console.log(888);
-      console.log(err);
-    });
-
-  mainApi.getUserInfo()
-    .then((res) => headerRender(res.data.name, PROPS.isLoggedIn))
-    .catch((err) => {
-      console.log(888);
       console.log(err);
     });
 });
