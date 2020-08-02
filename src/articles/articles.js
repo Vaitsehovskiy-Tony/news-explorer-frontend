@@ -24,14 +24,13 @@ window.addEventListener('load', () => {
         renderAccountButton(userData.data.name);
 
         if (articles.data.length > 0) {
-          renderAccountCount(userData.data.name, articles.data.length, articles.data[0].keyword);
+          renderAccountCount(userData.data.name, articles.data.length, articles.data);
           document.querySelector('.results')
             .classList.add('results_is-opened');
           savedArticlesList.render(articles.data);
         } else {
           console.log('У вас нет сохраненных статей');
         }
-        //
       },
     )
     .catch((err) => {
