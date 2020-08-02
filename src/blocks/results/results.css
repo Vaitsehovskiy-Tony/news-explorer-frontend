@@ -54,6 +54,18 @@
   display: flex;
 }
 
+.results__ok {
+  width: 100%;
+  background: #F5F6F7;
+  display: flex;
+  display: none;
+}
+
+.results__ok.results_is-opened {
+  display: flex;
+  flex-direction: column;
+}
+
 .results__title {
   font-family: RobotoSlab;
   font-style: normal;
@@ -78,6 +90,10 @@
   color: #1A1B22;
   border-style: none;
   cursor: pointer;
+}
+
+.results__button.results__bttn_is-opened {
+  display: block;
 }
 
 .results.results_saved-articles {

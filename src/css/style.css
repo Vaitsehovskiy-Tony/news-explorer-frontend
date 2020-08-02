@@ -9,6 +9,7 @@
 @import url(../blocks/author/author.css);
 @import url(../blocks/pop-up/pop-up.css);
 @import url(../blocks/footer/footer.css);
+
 body {
   margin: 0;
 }

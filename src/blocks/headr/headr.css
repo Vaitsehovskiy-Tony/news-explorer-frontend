@@ -84,7 +84,7 @@
 .headr__bttn.headr__bttn_name.headr__bttn_name_is-opened {
   display: inline-block;
 }
-.headr__menu-320 {
+.headr__button-320 {
   background: url(../../images/menu-white.png) center no-repeat;
   background-color: transparent;
   border: none;
@@ -95,6 +95,10 @@
   right: 16px;
   cursor: pointer;
   display: none;
+}
+
+.headr__button-320.headr__button-320_black {
+  background: url(../../images/menu-black.png) center no-repeat;
 }
 
 .headr__close-320 {
@@ -108,6 +112,10 @@
   right: 16px;
   cursor: pointer;
   display: none;
+}
+
+.headr_font-black.headr__menu {
+  color: #FFFFFF;
 }
 
 @media screen and (min-width:768px) and (max-width:1023px) {
@@ -132,41 +140,63 @@
 @media screen and (min-width:320px) and (max-width:767px) {
   .headr {
     background-image: url('../../images/search-320.png');
+    /* width: calc(100% - 32px); */
     height: 56px;
     z-index: 1;
+    flex-direction: column;
+    align-items: flex-start;
   }
   .headr__logo {
-    font-size: 16px;
-    line-height: 24px;
-    margin-top: 16px;
-    margin-bottom: 16px;
-    margin-left: 16px;
-    z-index: 10;
+    margin: 16px auto 16px 16px;
+    z-index: 2;
   }
-  .headr__menu-320 {
-    display: flex;
-    z-index: 10;
-  }
-  .headr__menu {
+  .headr__menu_container-320 {
     background: #1A1B22;
-    width: 100%;
-    border-radius: 16px;
-    position: absolute;
-    top: -56px;
-    left: 0;
-    display: flex;
+    width: calc(100% - 32px);
+    margin: auto;
+    padding: 0 16px 0;
+    display: none;
     flex-direction: column;
-    height: 286px;
-    padding: 88px 16px 16px;
+    position: relative;
+    bottom: 56px;
+  }
+  .headr__menu_container-320.headr__menu_visible {
+    display: flex;
+  }
+  .headr__button-320 {
+    display: flex;
+    z-index: 2;
+  }
+  .headr__button-320.headr__menu_invisible {
     display: none;
   }
-  .headr__link {
-    margin: 0 0 30px;
+  .headr__close-320 {
+    display: none;
+    z-index: 5;
   }
-  .headr__bttn {
-    width: calc(100% - 32px);
+  .headr__button {
+    margin: 0 auto 24px;
+    text-align: center;
+    width: 100%;
   }
-  .headr__menu.headr__menu_is-opened {
+  .headr__menu-main {
+    margin: 88px 0 32px;
+    display: none;
+  }
+  .headr__button_authorize {
+    display: none;
+  }
+  .headr__menu-main.headr__menu_visible {
     display: flex;
+  }
+  .headr__button_authorize.headr__menu_visible {
+    display: flex;
+  }
+  .headr__close-320.headr__menu_visible {
+    display: flex;
+    z-index: 5;
+  }
+  .headr__menu-articles {
+    margin-top: 0;
   }
 }
