@@ -90,9 +90,10 @@
   color: #1A1B22;
   border-style: none;
   cursor: pointer;
+  display: none;
 }
 
-.results__button.results__bttn_is-opened {
+.results__bttn.results__bttn_is-opened {
   display: block;
 }
 

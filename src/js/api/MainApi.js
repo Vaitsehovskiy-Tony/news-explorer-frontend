@@ -111,6 +111,6 @@ export default class MainApi {
         authorization: this.options.headers.authorization,
       },
     })
-      .then((res) => this._getResponseData(res));
+      .then((info) => this._getResponseData(info));
   }
 }

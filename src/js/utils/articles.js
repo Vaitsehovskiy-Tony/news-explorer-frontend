@@ -12,3 +12,11 @@ export function showFirstArticles(newArticles, keyword, savedArticles) {
   }
   return newArticles.slice(0);
 }
+
+// eslint-disable-next-line consistent-return
+export function noResults(newArticles) {
+  document.querySelector('.results__searching').classList.remove('results_is-opened');
+  if (newArticles.length === 0) {
+    return document.querySelector('.results__nothing').classList.add('results_is-opened');
+  }
+}

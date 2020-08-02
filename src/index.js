@@ -25,7 +25,7 @@ import FormValidator from './js/components/FormValidator';
 import { PROPS, mainApi, newsApi, article, cardList } from './js/constants/constants';
 
 const { headerRender, headerRenderLogout, headerRenderMobileOpen, headerRenderMobileClose } = require('./js/utils/render');
-const { showFirstArticles } = require('./js/utils/articles');
+const { showFirstArticles, noResults } = require('./js/utils/articles');
 // const {
 //   showFirstArticles, showResultsNothing, showMessageServerError,
 // } = require('./js/utils/articles');
@@ -42,6 +42,7 @@ const articlesList = document.querySelector('.articles-list');
 const resultsButton = document.querySelector('.results__bttn');
 const headerMenu320 = document.querySelector('.headr__button-320');
 const headerClose320 = document.querySelector('.headr__close-320');
+const articlesListSaved = document.querySelector('.articles-list-saved');
 
 const popupAuth = new Popup(document.querySelector('.pop-up_authorize'));
 const popupRegistr = new Popup(document.querySelector('.pop-up_registration'));
@@ -89,10 +90,8 @@ headerClose320.addEventListener('click', () => {
 
 searchForm.addEventListener('submit', (event) => {
   event.preventDefault();
-
   document.querySelector('.results__nothing').classList.remove('results_is-opened');
   document.querySelector('.results__ok').classList.remove('results_is-opened');
-
   document.querySelector('.results__searching').classList.add('results_is-opened');
   console.log('0');
 
@@ -101,8 +100,7 @@ searchForm.addEventListener('submit', (event) => {
     mainApi.getArticles()
       .then((res) => {
         document.querySelector('.results__searching').classList.remove('results_is-opened');
-        document.querySelector('.results')
-          .classList.add('results_is-opened');
+        document.querySelector('.results').classList.add('results_is-opened');
         document.querySelector('.results__ok').classList.add('results_is-opened');
         // eslint-disable-next-line no-return-assign
         return savedArticles = res.data;
@@ -121,6 +119,8 @@ searchForm.addEventListener('submit', (event) => {
       document.querySelector('.results')
         .classList.add('results_is-opened');
       document.querySelector('.results__ok').classList.add('results_is-opened');
+      noResults(res.articles);
+      articlesList.innerHTML = '';
       // eslint-disable-next-line no-return-assign
       // eslint-disable-next-line max-len
       // eslint-disable-next-line no-return-assign
@@ -175,20 +175,21 @@ popupFormAuth.addEventListener('submit', (event) => {
   mainApi.signIn(
     popupFormAuth.email.value,
     popupFormAuth.password.value,
-  );
-  mainApi.getUserInfo()
+  )
     .then((res) => {
       console.log(res);
       PROPS.isLoggedIn = true;
       console.log(777);
       popupFormAuth.reset();
       popupAuth.close();
-      // mainApi.getUserInfo(res);
-      console.log(8080);
-      console.log(res);
-      console.log(res.data);
-      headerRender(res.data.name, PROPS.isLoggedIn);
     })
+    .catch((err) => {
+      console.log(888);
+      console.log(err);
+    });
+
+  mainApi.getUserInfo()
+    .then((res) => headerRender(res.data.name, PROPS.isLoggedIn))
     .catch((err) => {
       console.log(888);
       console.log(err);
