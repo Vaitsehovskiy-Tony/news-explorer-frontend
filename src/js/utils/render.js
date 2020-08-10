@@ -64,6 +64,7 @@ function renderAccountCount(name, count, array) {
   const otherWord = Object.keys(result).length - 2;
 
   if (!secondWord) {
+    // eslint-disable-next-line prefer-destructuring
     secondWord = arr[0];
   }
 

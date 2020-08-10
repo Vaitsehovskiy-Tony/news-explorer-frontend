@@ -11,6 +11,5 @@ node_modules
 # Optional REPL history
 .DS_Store
 
-dist
 package-lock.json
 node_modules
