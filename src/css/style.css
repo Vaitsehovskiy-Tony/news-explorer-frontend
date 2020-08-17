@@ -1,0 +1,26 @@
+@import url(../vendor/fonts.css);
+@import url(../vendor/modern-reset.css);
+@import url(../blocks/headr/headr.css);
+@import url(../blocks/search/search.css);
+@import url(../blocks/bttn/bttn__exit.css);
+@import url(../blocks/results/results.css);
+@import url(../blocks/articles-list/articles-list.css);
+@import url(../blocks/article-card/article-card.css);
+@import url(../blocks/author/author.css);
+@import url(../blocks/pop-up/pop-up.css);
+@import url(../blocks/footer/footer.css);
+
+body {
+  margin: 0;
+}
+
+.root {
+  font-family: 'Inter', Arial, Helvetica, sans-serif;
+  color: #1A1B22;
+}
+
+.content {
+  min-width: 320px;
+  max-width: 1440px;
+  margin: 0 auto;
+}

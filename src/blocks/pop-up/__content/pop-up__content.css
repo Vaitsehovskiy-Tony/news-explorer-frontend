@@ -1,0 +1,19 @@
+.pop-up__content {
+  width: 430px;
+  min-height: 330px;
+  background-color: #fff;
+  border-radius: 10px;
+  position: relative;
+  box-sizing: border-box;
+  padding: 34px 36px;
+}
+
+.pop-up__content_success-registration {
+  min-height: 182px;
+}
+
+@media screen and (max-width: 540px) {
+  .pop-up__content {
+    width: calc(100% - 60px);
+  }
+}

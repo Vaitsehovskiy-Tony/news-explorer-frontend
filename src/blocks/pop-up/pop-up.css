@@ -1,0 +1,56 @@
+@import url(./__content/pop-up__content.css);
+@import url(./__close/pop-up__close.css);
+@import url(./__title/pop-up__title.css);
+@import url(./__form/pop-up__form.css);
+@import url(./__input/pop-up__input.css);
+@import url(./__error/pop-up__error.css);
+@import url(./__bttn/pop-up__bttn.css);
+@import url(./__choice/pop-up__choice.css);
+@import url(./_is-opened/pop-up_is-opened.css);
+
+.pop-up_authorize {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, .5);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  display: none;
+}
+
+.pop-up__close_image {
+  width: 26px;
+  position: absolute;
+  top: -26px;
+  right: -26px;
+  cursor: pointer;
+}
+
+.pop-up_registration {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, .5);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  display: none;
+}
+
+.pop-up_success-registration {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, .5);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  display: none;
+}

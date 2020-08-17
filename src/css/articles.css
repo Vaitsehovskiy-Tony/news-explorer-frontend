@@ -1,0 +1,57 @@
+@import url(../vendor/fonts.css);
+@import url(../vendor/modern-reset.css);
+@import url(../blocks/headr/headr.css);
+@import url(../blocks/account-info/account-info.css);
+@import url(../blocks/bttn/bttn__exit.css);
+@import url(../blocks/results/results.css);
+@import url(../blocks/articles-list/articles-list.css);
+@import url(../blocks/article-card/article-card.css);
+@import url(../blocks/pop-up/pop-up.css);
+@import url(../blocks/footer/footer.css);
+
+
+body {
+  margin: 0;
+}
+
+.root {
+  font-family: 'Inter', Arial, Helvetica, sans-serif;
+  color: #1A1B22;
+}
+
+.headr {
+  border-bottom: 0.5px solid rgba(26, 27, 34, 0.5);
+}
+
+.headr__bttn.headr__bttn_name {
+  display: inline-block;
+}
+
+.headr_font-black {
+  color: #1A1B22;
+}
+
+.headr__bttn_black {
+  border: 1px solid #1A1B22;
+}
+
+.headr.headr_without-img {
+  background-image: none;
+  margin-bottom: 40px;
+}
+
+.headr__link.headr__link_articles a {
+  color: #1A1B22;
+}
+
+.section-title {
+  font-family: RobotoSlab;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 40px;
+  line-height: 46px;
+}
+
+.section-title_results {
+  margin: 0 0 64px;
+}

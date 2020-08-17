@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="ru">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="autor" content="Anton Vaitsehovskiy">
+  <meta name="description" content="Сервис для поиска новостей">
+  <title>Сервис поиска новостей</title>
+  <link rel="shortcut icon" type="image/x-icon" sizes="16x16"
+    href="./images/favicon-N-16x16.png">
+  <link rel="stylesheet" href="style/articles.185d57f62efaf8a3ec36.css">
+</head>
+
+<body>
+  <div class="root">
+    <main class="content">
+      <header class="headr headr_without-img">
+        <button class="headr__button-320 headr__button-320_black"></button>
+        <button class="headr__close-320"></button>
+
+        <p class="headr__logo headr_font-black">NewsExplorer</p>
+        <div class="headr__menu headr__menu_container-320">
+          <a class="headr__link headr_font-black headr__menu" href="./index.html">Главная</a>
+          <a class="headr__link headr_font-black headr__menu" href="./articles.html">Сохранённые статьи</a>
+          <button class="headr__bttn headr__bttn_name headr_font-black headr__bttn_black headr__menu">
+            <span class="headr__user-name"></span>
+            <img class="headr__img-logout" src="./images/exit1440black.svg"
+            alt="headr__img-logout"></button>
+        </div>
+      </header>
+      <section class="account-info">
+        <p class="account-info__subtitle"> Сохранённые статьи</p>
+        <p class="account-info__title"></p>
+        <p class="account-info__keywords"> По ключевым словам: <span class="account-info__keywords_bold"></span></p>
+      </section>
+
+
+      <section class="results results_saved-articles root__section">
+        <div class="articles-list root__section articles-list-saved"></div>
+
+
+        <div class="results__nothing ">
+          <p class="results__regret-text">У вас нет сохраненных статей</p>
+        </div>
+
+      </section>
+
+      <footer class="footer">
+        <p class="footer__copyright">© 2020 Supersite, Powered by News API</p>
+
+        <div class="footer__links-container">
+          <div class="footer__links_main"><a class="footer__links " href="./">Главная</a>
+          </div>
+          <div class="footer__links_practikum"><a class="footer__links "
+              href="https://praktikum.yandex.ru/">Яндекс.Практикум</a>
+          </div>
+        </div>
+
+        <div class="footer__icons-container">
+          <a class=" footer__icons" href="https://www.facebook.com/"><img src="./images/fb.svg"
+              alt="Facebook"></a>
+
+          <a class="footer__icons" href="https://github.com/"><img src="./images/gh.svg"
+              alt="github"></a>
+        </div>
+
+      </footer>
+    </main>
+
+  </div>
+  <script type="module" src="./js/articles.39a3a14e7175ec2347bb.js"></script>
+</body>
+
+</html>
