@@ -15,15 +15,16 @@ export const article = new Article();
 export const cardList = new ArticleList(articlesList, article, resultsButton);
 
 export const mainApi = new MainApi({
-  baseUrl: 'https://myownnews.ru.com',
+  baseUrl: 'http://newsexplorer.nomoredomains.club',
   headers: {
     'Content-Type': 'application/json',
   },
 });
 
 export const newsApi = new NewsApi({
-  baseUrl: 'https://praktikum.tk/news/v2/everything?language=ru&apiKey=6aa47727b1b54808b0244a1d2c266dab&',
+  baseUrl: 'https://newsapi.org/v2/everything?q=Apple&from=2021-09-03&sortBy=popularity&apiKey=6aa47727b1b54808b0244a1d2c266dab&',
   headers: {
     'Content-Type': 'application/json',
   },
 });
+
