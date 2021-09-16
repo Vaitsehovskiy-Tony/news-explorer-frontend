@@ -15,7 +15,7 @@ export const article = new Article();
 export const cardList = new ArticleList(articlesList, article, resultsButton);
 
 export const mainApi = new MainApi({
-  baseUrl: 'http://newsexplorer.nomoredomains.club',
+  baseUrl: 'https://api.newsexplorer.nomoredomains.club',
   headers: {
     'Content-Type': 'application/json',
   },
