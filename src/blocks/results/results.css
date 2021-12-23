@@ -1,0 +1,10 @@
+@import url(./__cards/__cards.css);
+@import url(./__show-more/__show-more.css);
+@import url(./__title/__title.css);
+@import url(./__show-more-text/__show-more-text.css);
+@import url(./_hidden/results_hidden.css);
+
+
+.results {
+  background-color: #F5F6F7;
+}

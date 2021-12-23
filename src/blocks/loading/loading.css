@@ -1,0 +1,10 @@
+@import url(./__img/__img.css);
+@import url(./__text/__text.css);
+@import url(./_hidden/results__loading_hidden.css);
+
+.loading {
+  margin: 0 auto;
+  padding: 100px 0 0;
+  width: 100%;
+  background-color: #F5F6F7;
+}

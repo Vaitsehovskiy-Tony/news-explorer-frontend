@@ -1,0 +1,40 @@
+.card__bookmark {
+
+  width: 40px;
+  height: 40px;
+
+  position: absolute;
+  right: 24px;
+  top: 24px;
+  background-image: url(../../../images/rectangle.png);
+  background-color: #ffffff;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: 14px 19px;
+  z-index: 2;
+  border-radius: 8px;
+  cursor: pointer;
+}
+
+.card__bookmark:hover {
+  background-image: url(../../../images/rectangle_hover.png);
+  transition: background-image 0.5s linear;
+}
+
+/* состояния при "лайке" */
+.card__bookmark.card__bookmark_logged {
+  background-image: url(../../../images/rectangle_marked.png);
+}
+
+.card__bookmark.card__bookmark_logged:hover {
+  background-image: url(../../../images/rectangle_marked.png);
+}
+
+/* состояние на странице избранного */
+.card__bookmark.card__bookmark_bin {
+  background-image: url(../../../images/trash-grey.png);
+}
+
+.card__bookmark.card__bookmark_bin:hover {
+  background-image: url(../../../images/trash-black.png);
+}

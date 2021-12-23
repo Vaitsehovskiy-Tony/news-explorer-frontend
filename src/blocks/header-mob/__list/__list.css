@@ -1,0 +1,5 @@
+.header-mob__list {
+  width: 100vw;
+  min-height: 250px;
+  background-color: rgba(26, 27, 34, .9);
+}

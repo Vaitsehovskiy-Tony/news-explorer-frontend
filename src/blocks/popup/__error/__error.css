@@ -1,0 +1,14 @@
+@import url(./_hide.css/popup__error_hide.css);
+
+.popup__error {
+  font-size: 12px;
+  line-height: 15px;
+  color: rgba(255, 0, 0, .7);;
+  position: fixed;
+  margin: -14px 0 0 4px ;
+
+}
+
+.popup__error:last-of-type {
+  margin: 0px 0 0 4px ;
+}

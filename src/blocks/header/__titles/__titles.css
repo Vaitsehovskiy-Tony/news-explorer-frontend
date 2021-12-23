@@ -1,0 +1,22 @@
+.header__titles {
+  margin: 80px auto 0;
+  max-width: 608px;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+@media screen and (max-width: 375px) {
+  .header__titles {
+    margin: 40px 20px 0;
+    max-width: 340px;
+  }
+}
+
+@media screen and (max-width: 320px) {
+  .header__titles {
+    margin: 30px 20px 0;
+    max-width: 288px;
+  }
+}

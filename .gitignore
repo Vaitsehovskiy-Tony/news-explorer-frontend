@@ -1,0 +1,16 @@
+# Logs
+*.log
+
+# Dependency directory
+node_modules
+
+# Optional npm cache directory
+.npm
+.vscode
+
+# Optional REPL history
+.DS_Store
+
+dist
+package-lock.json
+node_modules

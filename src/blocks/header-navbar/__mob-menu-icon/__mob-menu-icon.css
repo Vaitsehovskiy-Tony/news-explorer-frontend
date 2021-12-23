@@ -1,0 +1,12 @@
+.header-navbar__mob-menu-icon {
+  width: 40px;
+  height: 40px;
+  cursor: pointer;
+  display: none;
+}
+
+@media screen and (max-width: 650px) {
+  .header-navbar__mob-menu-icon {
+    display: inline-block;
+  }
+}

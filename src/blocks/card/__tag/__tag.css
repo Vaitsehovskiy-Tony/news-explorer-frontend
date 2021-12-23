@@ -1,0 +1,16 @@
+.card__tag {
+
+  width: 80px;
+  height: 40px;
+  display: none;
+  position: absolute;
+  left: 24px;
+  top: 24px;
+  border-radius: 8px;
+  background-color: #ffffff;
+  cursor: pointer;
+}
+
+.card__tag.active {
+  display: flex;
+}
