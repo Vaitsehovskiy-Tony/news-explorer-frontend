@@ -83,7 +83,6 @@ export default class NewsSection {
     console.log(arr);
   }
 
-
   _checkIfSaved() {
     const newCards = this._newsToCheck.searchResults.articles;
     if (this._newsToCheck.savedCards === undefined) {
@@ -97,7 +96,5 @@ export default class NewsSection {
       }
       this._newsToRender = newCards;
     }
-
   }
-
 }

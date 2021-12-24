@@ -44,6 +44,7 @@ export default class MainApi {
       if (res.ok) return res.json();
     } catch (e) {
       // eslint-disable-next-line no-unused-expressions
+      console.log('lalalalalal')
       `error: ${e}`;
     }
   }
