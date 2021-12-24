@@ -86,7 +86,7 @@ export default class NewsSection {
 
   _checkIfSaved() {
     const newCards = this._newsToCheck.searchResults.articles;
-    if (this._newsToCheck.savedCards.data === undefined) {
+    if (this._newsToCheck.savedCards === undefined) {
       this._newsToRender = newCards;
     } else {
       const savedCards = this._newsToCheck.savedCards.data;

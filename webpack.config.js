@@ -17,6 +17,7 @@ module.exports = {
     path: path.resolve(__dirname, 'dist'),
     filename: '[name]/[name].[chunkhash].js'
   },
+  devtool:'eval-source-map',
   module: {
     rules: [
       {
@@ -92,5 +93,4 @@ module.exports = {
       'NODE_ENV': JSON.stringify(process.env.NODE_ENV)
     })
   ],
-  devtool:'eval-source-map',
 };
