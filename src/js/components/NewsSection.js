@@ -86,13 +86,18 @@ export default class NewsSection {
 
   _checkIfSaved() {
     const newCards = this._newsToCheck.searchResults.articles;
-    const savedCards = this._newsToCheck.savedCards.data;
-    if (savedCards.length > 0) {
-      newCards.forEach(card => {
-        card.isLiked = savedCards.some(savedCard => savedCard.link == card.url);
-      })
+    if (this._newsToCheck.savedCards.data === undefined) {
+      this._newsToRender = newCards;
+    } else {
+      const savedCards = this._newsToCheck.savedCards.data;
+      if (savedCards.length > 0) {
+        newCards.forEach(card => {
+          card.isLiked = savedCards.some(savedCard => savedCard.link == card.url);
+        })
+      }
+      this._newsToRender = newCards;
     }
-    this._newsToRender = newCards;
+
   }
 
 }
