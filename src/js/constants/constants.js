@@ -13,7 +13,8 @@ const newsApiConfig = {
 };
 
 const mainApiConfig = {
-  baseUrl: 'https://api.newsexplorer.nomoredomains.club/',
+  // baseUrl: 'https://api.newsexplorer.nomoredomains.club/',
+  baseUrl: 'http://localhost:3000/',
   credentialsState: 'include',
   logoutLink: 'logout/',
   signInLink: 'signin/',

@@ -14,7 +14,7 @@
 
 
 .card {
-  width: 28vw;
+  /* width: 28vw; */
   max-width: 400px ;
   border-radius: 16px;
   background-color: #fff;
@@ -23,28 +23,28 @@
 
 @media screen and (max-width: 1000px) {
   .card {
-    width: 100%;
+    /* width: 100%; */
     margin: 0 auto;
   }
 }
 
 @media screen and (max-width: 750px) {
   .card {
-    width: 100%;
+    /* width: 100%; */
     margin: 0 auto;
   }
 }
 
 @media screen and (max-width: 60px) {
   .card {
-    width: 85%;
+    /* width: 85%; */
     margin: 0 auto;
   }
 }
 
 @media screen and (max-width: 450px) {
   .card {
-    width: 90%;
+    /* width: 90%; */
     margin: 0 auto;
   }
 }

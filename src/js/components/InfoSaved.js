@@ -8,7 +8,6 @@ export default class InfoSaved {
   }
 
   giveInfo() {
-
     this._getKeywords();
     this._makeTitle();
     this._getKeywordsData();
@@ -69,41 +68,4 @@ export default class InfoSaved {
       this._keywords[i] = (this._keywords[i] || 0) + 1;
     });
   }
-
-
 }
-
-
-  // меняем местами ключи и значения для удобного доступа к ним
-  // если преобразовать ф-ю, доб усл-ие что значения одной величины пушатся к ключу...
-  // this._keywordsArr = Object.assign({}, ...Object.entries(this._keywords).map(([a,b]) => ({ [b]: a })));
-  // console.log(this._keywordsArr);
-
-// this._subTitle = this._getTemplate(someTemplate);
-//     this._subTitle.querySelector('.info__keywords').textContent = 'По ключевому слову:';
-//     this._subTitle.querySelector('.info__keywords-bold').textContent = first;
-//     this._subTitle.querySelector('.info__keywords-bold').textContent = second;
-
-
-// наработки по template
-
-// _getTemplate() {
-//   return document.querySelector(this._infoTemplate).content.cloneNode(true);
-// }
-
-// _makeSubtitle(first, second) {
-
-//   this._subTitle = this._getTemplate();
-//   this._subTitle.querySelector('.info__keywords').textContent = 'По ключевому слову:';
-//   console.log(this._subTitle);
-//   this._subTitle.querySelector('.info__keyword-first').textContent = 'first';
-//   console.log(this._subTitle);
-//   if (second) {
-//     this._subTitle.querySelector('.info__keyword-and').textContent = `и`;
-//     this._subTitle.querySelector('.info__keyword-second').textContent = second;
-//   }
-//   console.log(this._subTitle);
-
-//   document.querySelector('.info').querySelector('.wrapper').appendChild(this._subTitle);
-//   // this._subTitle.textContent = `По ключевым словам: ${this._calcStr}`
-// }

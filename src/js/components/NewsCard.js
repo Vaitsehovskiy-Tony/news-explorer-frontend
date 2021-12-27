@@ -31,15 +31,12 @@ export default class NewsCard {
     this._keyword = keyword;
     this.date = new Date();
     this.newCard = this._getTemplate();
-
-    // передавать как объект селекторы карточки
     this.newCard.querySelector('.card__login-reminder-text').textContent = this._chooseReminder();
     this.newCard.querySelector('.card__date').textContent = this.date.toUTCString(item.publishedAt);
     this.newCard.querySelector('.card__title').textContent = item.title;
     this.newCard.querySelector('.card__subtitle').textContent = item.description;
     this.newCard.querySelector('.card__source').textContent = item.source.name;
     this.newCard.querySelector('.card__img').setAttribute('src', `${item.urlToImage}`);
-    // попробовать без firstElementChild че получится
     this.newCard.firstElementChild.setAttribute('src', `${item.url}`);
     if (keyword) this.newCard.firstElementChild.setAttribute('keyword', `${keyword}`);
     this._wasSaved();
@@ -76,6 +73,4 @@ export default class NewsCard {
       image: this._cardItem.urlToImage,
     }
   }
-
-
 }

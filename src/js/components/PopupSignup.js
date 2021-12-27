@@ -3,12 +3,10 @@ import Popup from './Popup';
 export default class PopupSignup extends Popup {
   constructor(popupAltButton, popupFormSignup, { callback, altPopup}) {
     super(popupFormSignup);
-    // this._popupAltButton = popupAltButton;
     this._callback = callback;
     this._altPopup = altPopup;
-    this.ppp = document.querySelector('.popup__signup');
     this._inputs = this._popup.querySelectorAll('.popup__input');
-    this._popupAltButton = this.ppp.querySelector(popupAltButton);
+    this._popupAltButton = this._popup.querySelector(popupAltButton);
     this._submitHandler = this._submitLogic.bind(this);
     this._altPopupHandler = this._altPopupLogic.bind(this);
     this._submitButton = this._popup.querySelector('.popup__button');
@@ -33,12 +31,6 @@ export default class PopupSignup extends Popup {
 
   _clearInputValues() {
     this._inputs.forEach((i) => i.value === '');
-  }
-
-  // этот метод нужен?
-  setInputValues(userData) {
-    this._inputs[0].value = userData.userName;
-    this._inputs[1].value = userData.userJob;
   }
 
   // установка и деинсталляция слушателей

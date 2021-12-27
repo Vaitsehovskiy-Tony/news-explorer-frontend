@@ -25,8 +25,6 @@ export default class Header {
     this._popupOpenHandler = this._popupOpenLogic.bind(this);
   }
 
-  //надо накидать слушателей хедера моб - esc и ovarlay
-
   _headerIteratorAdd(selector) {
     selector.forEach(i => i.classList.add('header-navbar__menu-item_hidden'));
   }
@@ -52,19 +50,18 @@ export default class Header {
     }
   }
 
-  _setEventListeners() {
+  setEventListeners() {
     this._popupOpenListener();
     this._mobMenuListener();
   }
 
   tokenCheck(gotToken) {
-    this._setEventListeners();
+    this.setEventListeners();
     if (gotToken) {
       this._getInfo(gotToken)
     }
   }
 
-  // где лучше расположить?
   _removePopupOpenListener() {
     this._headrbttnLogin.removeEventListener('click', this._popupOpenHandler);
     this._headrbttnMobLogin.removeEventListener('click', this._popupOpenHandler);

@@ -6,10 +6,7 @@
     <meta name="description" content="Поиск и хранение персональных новостей">
     <meta name="author" content="Vaitsehovskiy Tony">
     <title>News Explorer</title>
-    <!-- "<%=require('../images/favicon.png').default%>" -->
-    <!-- "<%=require('../images/favicon-N-16x16.png').default%>" -->
     <link rel="shortcut icon" type="image/png"  href="<%=require('../images/favicon-N-16x16.png').default%>">
-    <!-- <link rel="shortcut icon" type="image/x-icon" sizes="10x10"  href="<%=require('../images/favicon-N-16x16.png').default%>"> -->
     <link rel="stylesheet" href="<%=htmlWebpackPlugin.files.css %>">
 </head>
 <body>
@@ -83,7 +80,6 @@
         <div class="wrapper results__ok">
           <h2 class="results__title">Результаты поиска</h2>
           <div class="result__cards">
-
           </div>
           <button class="results__show-more results__show-more_hidden">
             <span class="results__show-more-text">Показать еще</span>
@@ -111,7 +107,7 @@
           <img src="<%=require('../images/avatar.jpg')%>" alt="" class="about__avatar">
           <article class="about__content">
             <h3 class="about__content-title">Об авторе</h3>
-            <p class="about__content-subtitle">Это блок с описанием автора проекта. Здесь следует указать, как вас зовут, чем вы занимаетесь, какими технологиями разработки владеете. Также можно рассказать о процессе обучения в Практикуме, чему вы тут научились, и чем можете помочь потенциальным заказчикам.</p>
+            <p class="about__content-subtitle">Всем привет! Меня зовут Антон Вайцеховский. Я занимаюсь веб-разработкой.<br></p>
           </article>
         </div>
       </section>
@@ -197,8 +193,6 @@
         <div class="popup__content">
           <img src="<%=require('../images/close.svg')%>" alt="" class="popup__close popup__close-user">
           <h3 class="popup__title">Пользователь успешно зарегистрирован!</h3>
-          <!-- Удаляю? -->
-          <!-- <button class="popup__alternative-button">Выполнить вход</button> -->
         </div>
       </section>
 
@@ -206,13 +200,10 @@
         <div class="card">
           <img src="" alt="" class="card__img">
           <div class="card__bookmark"></div>
-          <!-- модификатор active -->
           <div class="card__tag">
             <span class="card__tag-text">Природа</span>
           </div>
           <div class="card__login-reminder active">
-            <!-- переименовать класс -->
-            <!-- как сделать плавный транзишн после ухода с ховера?? анимация обратно?? -->
             <span class="card__login-reminder-text"></span>
           </div>
           <article class="card__content">
@@ -227,19 +218,3 @@
     <script src="<%= htmlWebpackPlugin.files.js %>"></script>
 </body>
 </html>
-
-
-          <!-- <picture>
-            <source  media="(min-width: 320px) and (max-width:768px)" srcset='./images/mobile_georgia.png' type="image/png" width="100%">
-            <source media="(min-width: 768px) and (max-width:1024px)" srcset='./images/tablet_georgia.png' type="image/png" width="100%">
-            <img src='./images/mobile_georgia.png' srcset='./images/mobile_georgia.png' alt="header" style="width:auto">
-          </picture> -->
-
-      <!-- проверить эту мешанину классов -->
-      <!-- <section class="no-results results__no-results results__no-results_hidden active">
-        <div class="wrapper">
-          <img src="<%=require('../images/not_found.png')%>" alt="" class="no-results__img">
-          <h4 class="no-results__title">Ничего не найдено</h4>
-          <p class="no-results__subtitle">К сожалению, по вашему запросу ничего не найдено.</p>
-        </div>
-      </section> -->

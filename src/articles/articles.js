@@ -4,15 +4,15 @@ import NewsSection from '../js/components/NewsSection';
 import MainApi from '../js/api/MainApi';
 import Header from '../js/components/Header';
 import selectors from '../js/constants/selectors';
-import searchForm from '../js/components/SearchForm';
 import InfoSaved from '../js/components/InfoSaved';
 import {
   mainApiConfig,
 } from '../js/constants/constants';
 
-
-// добавить проверку разрешения посещения(isLoggedIn)
+// инициализация api взаимодествия с сервером
 const mainApi = new MainApi(mainApiConfig);
+
+// класс хедера
 const header = new Header(
   selectors.header,
   {
@@ -21,31 +21,42 @@ const header = new Header(
       .then(() => {
         mainApi.isLoggedIn = false;
         localStorage.removeItem('token');
+        document.location.reload();
+        document.location.href = "./index.html";
       })
-      .catch((err) => console.log(err));
+      .catch((err) => console.error(err));
     }
   },
-  {
-    popupCallback: () => popupSignin.open(),
-  }
+  { popupCallback: () => popupSignin.open() }
   );
 
-mainApi.getUserInfo()
-  .then((res) => {
-    mainApi.isLoggedIn = true;
-    header.render(mainApi.isLoggedIn, res.data.name);
-  })
-  .catch((err) => {
-    console.log(err);
-  });
+// инициализация класса карточки
+  const savedCard = new SavedCard(
+    selectors.cardTemplateSaved,
+    selectors.newsCard,
+    {
+      itemToRemove: (id, card) => {
+        mainApi.deleteArticle(id)
+        .then(() =>{
+        collection.removeCard(card);
+        })
+        .catch((err) => console.error(err))
+      }
+    }
+  );
 
-mainApi.getArticles()
-  .then((savedArticles) => {
+// класс отрисовки статистики
+// класс секции карточек
+Promise.all([
+  mainApi.getUserInfo(),
+  mainApi.getArticles()
+])
+  .then(([info, savedArticles]) => {
+    header.render(mainApi.isLoggedIn = true, info.data.name);
     const infoSaved = new InfoSaved(
       savedArticles,
       selectors.infoSaved,
-      // объединить в промис олл и имя закидывать оттуда, это временно
-      name = 'Anton',
+      info.data.name,
     );
     infoSaved.giveInfo();
     const collection = new NewsSection(
@@ -53,40 +64,14 @@ mainApi.getArticles()
       '',
       {
         cardCreator: (data) => {
-          const savedCard = new SavedCard(
-            selectors.cardTemplateSaved,
-            selectors.newsCard,
-            {
-              itemToRemove: (id, card) => {
-                mainApi.deleteArticle(id)
-                .then((res) =>{
-                collection.removeCard(card);
-                console.log('карточка удалена')
-                })
-                .catch((err) => console.log(err))
-              }
-            }
-          );
           collection.addCard(savedCard.create(data));
         },
-        newsToRender: savedArticles.data,
+        newsToCheck: {savedNews: savedArticles.data},
       },
     );
     collection.showNews();
   })
-  .catch((err) => console.log(err))
+  .catch((err) => console.error(err))
 
+// установка слушателя хедеру
 header.setEventListeners();
-
-
-// selectors.headrBttnMobMenuOpen.addEventListener('click', () => {
-//   selectors.headerMob.classList.add('header-mob_is-opened');
-// });
-
-// document.querySelector('.header-mob_is-opened').addEventListener('click', ()=> {
-//   selectors.headerMob.classList.remove('header-mob_is-opened')
-// })
-
-// selectors.headrMobClose.addEventListener('click', () => {
-//   selectors.headerMob.classList.remove('header-mob_is-opened');
-// });

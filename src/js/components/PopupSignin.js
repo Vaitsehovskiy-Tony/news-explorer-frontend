@@ -6,9 +6,7 @@ export default class PopupSignin extends Popup {
     this._callback = callback;
     this._altPopup = altPopup;
     this._inputs = this._popup.querySelectorAll('.popup__input');
-    // временный селектор, переделать
-    this.ppp = document.querySelector('.popup__signin');
-    this._popupAltButton = this.ppp.querySelector(popupAltButton);
+    this._popupAltButton = this._popup.querySelector(popupAltButton);
     this._submitHandler = this._submitLogic.bind(this);
     this._altPopupHandler = this._altPopupLogic.bind(this);
     this._getInputValuesContext = this._getInputValues();

@@ -7,14 +7,9 @@ export default class PopupSuccess extends Popup {
 
   open() {
     super.open();
-    // this._setEventListeners();
   }
 
   close() {
     super.close();
   }
-
-  // _setEventListeners() {
-  //   super._setEventListeners();
-  // }
 }

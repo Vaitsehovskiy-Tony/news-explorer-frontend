@@ -1,10 +1,3 @@
-// NewsCardList. Класс списка карточек новостей. Конструктор принимает массив карточек, которые должны быть в списке при первой отрисовке. Методы:
-// renderResults принимает массив экземпляров карточек и отрисовывает их;
-// renderLoader отвечает за отрисовку лоудера;
-// renderError принимает объект ошибки и показывает ошибку в интерфейсе;
-// showMore отвечает за функциональность кнопки «Показать ещё»;
-// addCard принимает экземпляр карточки и добавляет её в список.
-
 export default class NewsSection {
   constructor(newsSection, keyword, {cardCreator, newsToCheck}) {
     this._container = newsSection.cardGrid;
@@ -15,6 +8,10 @@ export default class NewsSection {
     this._showMoreHandler = this._showMoreLogic.bind(this);
   }
 
+  //очистка контейнера
+  //проверка есть ли сохраненные новости среди выдачи(для залогиненых пользователей)
+  //рендер 3 новостей
+  //инсталл слушателя событий
   showNews() {
     this._cleanContainer();
     this._checkIfSaved();
@@ -22,6 +19,7 @@ export default class NewsSection {
     this._moreButtonListener();
   }
 
+  // рендер 3 новостей
   _checkNewsLength() {
     if (this._newsToRender.length > 3) {
       this._showMoreButton.classList.remove('results__show-more_hidden');
@@ -84,17 +82,16 @@ export default class NewsSection {
   }
 
   _checkIfSaved() {
-    const newCards = this._newsToCheck.searchResults.articles;
-    if (this._newsToCheck.savedCards === undefined) {
-      this._newsToRender = newCards;
-    } else {
-      const savedCards = this._newsToCheck.savedCards.data;
-      if (savedCards.length > 0) {
-        newCards.forEach(card => {
-          card.isLiked = savedCards.some(savedCard => savedCard.link == card.url);
+      if (this._newsToCheck.newNews === undefined) {
+        this._newsToRender = this._newsToCheck.savedNews;
+      } else if (this._newsToCheck.savedNews === undefined) {
+        this._newsToRender = this._newsToCheck.newNews;
+      } else {
+        this._newsToCheck.newNews.forEach(card => {
+          card.isLiked = this._newsToCheck.savedNews
+          .some(savedCard => savedCard.link == card.url);
         })
+        this._newsToRender = this._newsToCheck.newNews
       }
-      this._newsToRender = newCards;
     }
-  }
 }
