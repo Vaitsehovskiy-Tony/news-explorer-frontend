@@ -1,6 +1,7 @@
 # News Explorer
 
 https://newsexplorer.nomoredomains.club/
+![2021-12-29_00-58-51](https://user-images.githubusercontent.com/54285416/147610753-756bbbe1-406d-4e13-81b1-3741c74c130e.png)
 
 ## Содержание
 
