@@ -4,7 +4,6 @@ const monthAgo = `${currentDate.getFullYear()}
                  -${currentDate.getDate()-30}`;
 
 const newsApiConfig = {
-  // const apiKeyAVasi1yevyaru = `7222a165fcf24c058fa185f9541f821b`;
   apiKeyStayPuft: '6aa47727b1b54808b0244a1d2c266dab',
   sortBy: 'everything',
   dateFrom: monthAgo,
@@ -13,8 +12,8 @@ const newsApiConfig = {
 };
 
 const mainApiConfig = {
-  // baseUrl: 'https://api.newsexplorer.nomoredomains.club/',
-  baseUrl: 'http://localhost:3000/',
+  baseUrl: 'https://api.newsexplorer.nomoredomains.club/',
+  // baseUrl: 'http://localhost:3000/',
   credentialsState: 'include',
   logoutLink: 'logout/',
   signInLink: 'signin/',

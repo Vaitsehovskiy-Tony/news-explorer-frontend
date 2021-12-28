@@ -27,10 +27,7 @@ export default class MainApi {
         credentials: this.credentialsState,
         body: toString ? JSON.stringify(toString) : undefined,
       });
-      // if (res.status >= 400) {
-      //   return Promise.reject(res.statusText);
-      // }
-      if (res.ok) return res.json();
+      return res.json();
     } catch (e) {
       `error: ${e}`;
     }
@@ -41,14 +38,28 @@ export default class MainApi {
       email,
       password,
       name,
-    });
+    })
+    .then((res) => {
+      if (!res.ok) {
+        return Promise.reject(res.message);
+      }
+      return res;
+    })
+    .catch((err) => Promise.reject(err));
   }
 
   signIn(email, password) {
     return this._request(this.signInLink, 'POST', this.headers, {
       email,
       password,
-    });
+    })
+    .then((res) => {
+      if (!res.ok) {
+        return Promise.reject(res.message);
+      }
+      return res;
+    })
+    .catch((err) => Promise.reject(err));
   }
 
   logout() {
@@ -76,6 +87,13 @@ export default class MainApi {
   }
 
   getUserInfo() {
-    return this._request(this.usersLink + this.usersMeLink, 'GET', this.headersAuth);
+    return this._request(this.usersLink + this.usersMeLink, 'GET', this.headersAuth)
+    .then((res) => {
+      if (!res.ok) {
+        return Promise.reject(res.message);
+      }
+      return res;
+    })
+    .catch((err) => Promise.reject(err));;
   }
 }

@@ -4,7 +4,7 @@ import NewsSection from './js/components/NewsSection';
 import MainApi from './js/api/MainApi';
 import NewsApi from './js/api/NewsApi';
 import FormValidator from './js/components/FormValidator';
-import Popup from './js/components/Popup';
+// import Popup from './js/components/Popup';
 import PopupSuccess from './js/components/PopupSuccess';
 import PopupSignin from './js/components/PopupSignin';
 import PopupSignup from './js/components/PopupSignup';
@@ -57,10 +57,10 @@ const searchForm = new SearchForm(
         mainApi.getArticles(),
       ])
       .then(([searchResults, savedCards]) => {
-        const saved = [];
-        if (savedCards === undefined ) {
-          saved.data = [];
-        } else {savedCards = saved}
+        // const saved = [];
+        // if (savedCards === undefined ) {
+        //   saved.data = [];
+        // } else {savedCards = saved}
         searchForm.newsNoResultsCheck(searchResults);
         const newsSection = new NewsSection(
           selectors.newsSection,
@@ -70,7 +70,7 @@ const searchForm = new SearchForm(
               newsSection.addCard(newsCard.create(data, keyword));
             },
             newsToCheck: {
-              savedNews: saved.data,
+              savedNews: savedCards === undefined? saved = [] : savedCards.data,
               newNews: searchResults.articles,
             }
           },
@@ -112,46 +112,6 @@ const header = new Header(
   },
 );
 
-// класс попапа регистрации и успешной регистрации
-const popupSignup = new PopupSignup(
-  selectors.popupAltButton,
-  selectors.popupFormSignup,
-  {
-  callback: (inputs) => {
-    mainApi.signUp(
-      inputs[0],
-      inputs[1],
-      inputs[2],
-    )
-    .then((res) => {
-      localStorage.setItem('token', res.token);
-      mainApi.isLoggedIn = true;
-    })
-    .then(() => {
-      mainApi.getUserInfo()
-      .then((res) => {
-        header.render(
-          mainApi.isLoggedIn,
-          res.data.name,
-        );
-        const popupSuccess = new Popup(selectors.popupFormSignupOk);
-        popupSuccess.open();
-      })
-      .catch((err) => {
-        console.error(err);
-      });
-    })
-    .catch((err) => console.error(err));
-    mainApi.signIn(
-      inputs[0],
-      inputs[1],
-    )
-  },
-  altPopup: (evt) => {
-    popupSignin.open(evt);
-  }
-});
-
 // класс попапа авторизации
 const popupSignin = new PopupSignin(
   selectors.popupAltButton,
@@ -184,6 +144,63 @@ const popupSignin = new PopupSignin(
     popupSignup.open(evt);
   }
 });
+
+const popupSuccess = new PopupSuccess(
+  selectors.popupAltButton,
+  selectors.popupFormSignupOk,
+  {
+    altPopup: (evt) => {
+      popupSignin.open(evt);
+    }
+  });
+
+
+// класс попапа регистрации и успешной регистрации
+const popupSignup = new PopupSignup(
+  selectors.popupAltButton,
+  selectors.popupFormSignup,
+  {
+  callback: (inputs) => {
+    mainApi.signUp(
+      inputs[0],
+      inputs[1],
+      inputs[2],
+    )
+    .then((res) => {
+      res.status;
+      res;
+      console.log(res);
+      popupSuccess.open();
+
+      // localStorage.setItem('token', res.token);
+      // mainApi.isLoggedIn = true;
+    })
+    // .then(() => {
+      // mainApi.getUserInfo()
+      // .then((res) => {
+      //   header.render(
+      //     mainApi.isLoggedIn,
+      //     res.data.name,
+      //   );
+        // const popupSuccess = new Popup(selectors.popupFormSignupOk);
+        // popupSuccess.open();
+      // })
+      // .catch((err) => {
+      //   console.error(err);
+      // });
+    // })
+    .catch((err) => console.error(err));
+    // mainApi.signIn(
+    //   inputs[0],
+    //   inputs[1],
+    // )
+  },
+  altPopup: (evt) => {
+    popupSignin.open(evt);
+  }
+});
+
+
 
 // установка слушателя событий на форму поиска
 // проверка токена хедером
