@@ -1,6 +1,7 @@
 # News Explorer
 
 https://newsexplorer.nomoredomains.club/
+
 ![2021-12-29_00-58-51](https://user-images.githubusercontent.com/54285416/147610753-756bbbe1-406d-4e13-81b1-3741c74c130e.png)
 
 ## Содержание
@@ -70,7 +71,7 @@ https://newsexplorer.nomoredomains.club/
   
   Все заявленные функции на момент последнего деплоя работают исправно, 
   если вы найдете баги или ошибки буду признателен за обратную связь
-  [@tonyvaits](https://t.me/tonyvaits "Telegram")
+  [@tonyvaits](https://t.me/tonyvaits "Telegram") или [antonvaits](antonvaits@gmail.com "Gmail")
 
   Также вы можете ознакомиться с серверной частью по ссылке:
   https://github.com/Vaitsehovskiy-Tony/news-explorer-api
