@@ -71,7 +71,7 @@ https://newsexplorer.nomoredomains.club/
   
   Все заявленные функции на момент последнего деплоя работают исправно, 
   если вы найдете баги или ошибки буду признателен за обратную связь
-  [@tonyvaits](https://t.me/tonyvaits "Telegram") или [antonvaits](antonvaits@gmail.com "Gmail")
+  [telegram](https://t.me/tonyvaits) или [почта](mailto:antonvaits@gmail.com).
 
   Также вы можете ознакомиться с серверной частью по ссылке:
   https://github.com/Vaitsehovskiy-Tony/news-explorer-api
