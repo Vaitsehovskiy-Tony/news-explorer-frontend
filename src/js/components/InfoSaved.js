@@ -7,12 +7,14 @@ export default class InfoSaved {
     this._subTitle = document.querySelector('.info__keywords');
   }
 
+  // выдача результатов
   giveInfo() {
     this._getKeywords();
     this._makeTitle();
     this._getKeywordsData();
   }
 
+  // отрисовка строки информации
   _makeSubtitle(first, second) {
     if (first === null) this._subTitle.textContent = '';
     else {
@@ -23,6 +25,7 @@ export default class InfoSaved {
     }
   }
 
+  // отрисовка заголовка
   _makeTitle() {
     if (this._array.length === 0) {
       this._title.textContent = `${this._name}, у вас нет сохранённых статей`;
@@ -31,7 +34,10 @@ export default class InfoSaved {
     }
   }
 
+  // логика подготовки строки с ключевыми
+  // словами в зависимости от их количества
   _getKeywordsData() {
+
     // массив keywords
     this._topics = Object.keys(this._keywords);
 
@@ -41,7 +47,8 @@ export default class InfoSaved {
       this.number++;
     };
 
-    // возывает рендер субтайтла с двумя строками
+    // возывает рендер субтайтла с одной,
+    // двумя или тремя подстроками
     switch(this._topics.length) {
       case 0:
         this._makeSubtitle(null);
@@ -61,6 +68,7 @@ export default class InfoSaved {
     }
   }
 
+  // создание массива ключевых слов
   _getKeywords() {
     this._keywords = {};
     const _keywordsArray = this._array.map(i => i.keyword);

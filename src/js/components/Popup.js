@@ -7,6 +7,7 @@ export default class Popup {
     this._сloseHandler = this.close.bind(this);
   }
 
+
   open() {
     this._popup.classList.add('popup_is-opened');
     this._setEventListeners();

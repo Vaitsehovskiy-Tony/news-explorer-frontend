@@ -1,5 +1,6 @@
 export default {
-  // может стоит разбить на 2 - селектор и вэлью, или по-другому
+
+  // селекторы для index.js, разных классов
   searchSelector: document.querySelector('.search-form'),
   cardTemplateMain: '#cardTemplateMain',
   cardTemplateSaved: '#cardTemplateSaved',
@@ -12,6 +13,8 @@ export default {
     resultsSearching: document.querySelector('.results__loading'),
     resultsNothing: document.querySelector('.no-results'),
   },
+
+  // селекторы для хедера
   header: {
     headerSaved: '.header-navbar__saved',
     headerAuth: '.header-navbar__auth',
@@ -23,6 +26,8 @@ export default {
     headrMobClose: document.querySelector('.header-mob__close-icon'),
     headerMob: document.querySelector('.header-mob'),
   },
+
+  // для валидатора
   validator: {
     popupForm: '.popup__form',
     popupField: '.popup__input',
@@ -30,15 +35,21 @@ export default {
     popupSubmit: '.popup__button',
     popupHide: '.popup__error_hide',
   },
+
+  // для секции новостей
   newsSection: {
     cardGrid: document.querySelector('.result__cards'),
     showMoreButton: document.querySelector('.results__show-more'),
   },
+
+  // для карточки
   newsCard: {
     cardReminderSignin: 'Войдите, чтобы сохранять',
     cardReminderAdd: 'Добавить в избранное',
     cardReminderRemove: 'Убрать из сохранённых',
   },
+
+  // для карточки на странцие закладок
   infoSaved: {
     infoTitle: document.querySelector('.info__your-bookmarks'),
     infoTemplate: '#infoTemplate',

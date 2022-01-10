@@ -6,10 +6,12 @@ export default class SavedCard {
     this._removeHandler = this._removeLogic.bind(this);
   }
 
+  // возвращает шаблон карточки
   _getTemplate() {
     return document.querySelector(this._cardTemplate).content.cloneNode(true);
   }
 
+  // создания карточки
   create(item) {
     this.date = new Date();
     this.newCard = this._getTemplate();
@@ -28,10 +30,12 @@ export default class SavedCard {
     return this.newCard;
   }
 
+  // слушатель удаления
   _removeListener(){
     this.newCard.firstElementChild.addEventListener('click', this._removeHandler)
   }
 
+  // логика удаления
   _removeLogic(evt) {
     if (evt.target.classList.contains('card__bookmark_bin')) {
       this._itemToRemove(this._cardId, evt.target.parentElement);

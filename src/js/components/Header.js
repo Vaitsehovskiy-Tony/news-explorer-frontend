@@ -25,15 +25,7 @@ export default class Header {
     this._popupOpenHandler = this._popupOpenLogic.bind(this);
   }
 
-  _headerIteratorAdd(selector) {
-    selector.forEach(i => i.classList.add('header-navbar__menu-item_hidden'));
-  }
-
-  _headerIteratorRemove(selector) {
-    selector.forEach(i => i.classList.remove('header-navbar__menu-item_hidden'));
-  }
-
-
+  // рендер с проверкой авторизации
   render(isLoggedIn, userName) {
     if(isLoggedIn) {
       this._headerIteratorAdd(this._headerAuth);
@@ -50,58 +42,78 @@ export default class Header {
     }
   }
 
-  setEventListeners() {
-    this._popupOpenListener();
-    this._mobMenuListener();
-  }
-
+  // метод активирует слушателей, затем проверяет наличие токена
+  // если находит - подключает коллбэк(рендер данных от сервера)
   tokenCheck(gotToken) {
-    this.setEventListeners();
+    this._setEventListeners();
     if (gotToken) {
       this._getInfo(gotToken)
     }
   }
 
-  _removePopupOpenListener() {
-    this._headrbttnLogin.removeEventListener('click', this._popupOpenHandler);
-    this._headrbttnMobLogin.removeEventListener('click', this._popupOpenHandler);
+  // установка слушателей
+  _setEventListeners() {
+    this._popupOpenListener();
+    this._mobMenuListener();
   }
 
+  // метод раздачи класса всем элементам
+  _headerIteratorAdd(selector) {
+    selector.forEach(i => i.classList.add('header-navbar__menu-item_hidden'));
+  }
+
+  // метод раздачи класса всем элементам
+  _headerIteratorRemove(selector) {
+    selector.forEach(i => i.classList.remove('header-navbar__menu-item_hidden'));
+  }
+
+  // слушатели на кнопки логина у мобильного и десктопного меню
   _popupOpenListener() {
     this._headrbttnLogin.addEventListener('click', this._popupOpenHandler);
     this._headrbttnMobLogin.addEventListener('click', this._popupOpenHandler);
   }
 
+  // очистка слушателей на кнопки логина у мобильного и десктопного меню
+  _removePopupOpenListener() {
+    this._headrbttnLogin.removeEventListener('click', this._popupOpenHandler);
+    this._headrbttnMobLogin.removeEventListener('click', this._popupOpenHandler);
+  }
 
+  // слушатели логаута
   _logoutListener() {
     this._headerName.forEach(i => i.addEventListener('click', this._logoutHandler));
   }
 
+  // удаление слушателей логаута
   _removeLogoutListener() {
     this._headerName.forEach(i => i.removeEventListener('click', this._logoutHandler));
   }
 
+  // логика логаута
   _logoutLogic() {
     this._callback();
     this.render(false, '');
   }
 
+  // логика открытия попапа
   _popupOpenLogic() {
     this._popupCallback();
   }
 
+  // удаление слушателя мобильного меню
   _removeMobMenuListener() {
     this._headrBttnMobMenuOpen.removeEventListener('click', this._mobMenuHandler);
     this._headrMobClose.removeEventListener('click', this._mobMenuHandler);
   }
 
+  // слушатель мобильного меню
   _mobMenuListener() {
     this._headrBttnMobMenuOpen.addEventListener('click', this._mobMenuHandler);
     this._headrMobClose.addEventListener('click', this._mobMenuHandler);
   }
 
+  // логика мобильного меню
   _mobMenuLogic() {
     this._headerMob.classList.toggle('header-mob_is-opened');
   }
-
 }

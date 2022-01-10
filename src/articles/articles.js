@@ -31,19 +31,7 @@ const header = new Header(
   );
 
 // инициализация класса карточки
-  const savedCard = new SavedCard(
-    selectors.cardTemplateSaved,
-    selectors.newsCard,
-    {
-      itemToRemove: (id, card) => {
-        mainApi.deleteArticle(id)
-        .then(() =>{
-        collection.removeCard(card);
-        })
-        .catch((err) => console.error(err))
-      }
-    }
-  );
+
 
 // класс отрисовки статистики
 // класс секции карточек
@@ -64,6 +52,19 @@ Promise.all([
       '',
       {
         cardCreator: (data) => {
+          const savedCard = new SavedCard(
+            selectors.cardTemplateSaved,
+            selectors.newsCard,
+            {
+              itemToRemove: (id, card) => {
+                mainApi.deleteArticle(id)
+                .then(() =>{
+                collection.removeCard(card);
+                })
+                .catch((err) => console.error(err))
+              }
+            }
+          );
           collection.addCard(savedCard.create(data));
         },
         newsToCheck: {savedNews: savedArticles.data},
@@ -72,6 +73,8 @@ Promise.all([
     collection.showNews();
   })
   .catch((err) => console.error(err))
+
+
 
 // установка слушателя хедеру
 header.setEventListeners();

@@ -40,7 +40,7 @@ export default class MainApi {
       name,
     })
     .then((res) => {
-      if (!res.ok) {
+      if (res.message) {
         return Promise.reject(res.message);
       }
       return res;
@@ -54,7 +54,7 @@ export default class MainApi {
       password,
     })
     .then((res) => {
-      if (!res.ok) {
+      if (res.message) {
         return Promise.reject(res.message);
       }
       return res;
@@ -89,7 +89,7 @@ export default class MainApi {
   getUserInfo() {
     return this._request(this.usersLink + this.usersMeLink, 'GET', this.headersAuth)
     .then((res) => {
-      if (!res.ok) {
+      if (res.message) {
         return Promise.reject(res.message);
       }
       return res;

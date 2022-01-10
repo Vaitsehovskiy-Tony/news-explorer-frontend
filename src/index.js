@@ -29,52 +29,58 @@ const validatorSignin = new FormValidator(
   selectors.popupFormSignin,
   selectors.validator,
 );
-// инициализация класса карточки
-const newsCard = new NewsCard(
-  selectors.cardTemplateMain,
-  mainApi.isLoggedIn,
-  selectors.newsCard,
-  {
-    addNews: (card) => {
-      mainApi.postArticle(card)
-        .catch((err) => console.error(err))
-    },
-    removeNews: (cardId) => {
-      mainApi.deleteArticle(cardId)
-      .catch((err) => console.error(err))
-    }
-  }
-);
 
 // инициализация формы поиска и раздела новостей
 const searchForm = new SearchForm(
   selectors.searchSelector,
   selectors.search,
   {
+    // коллбэк поиска новостей
     getNews: (keyword) => {
       Promise.all([
         newsApi.getInitialCards(keyword),
         mainApi.getArticles(),
       ])
       .then(([searchResults, savedCards]) => {
-        // const saved = [];
-        // if (savedCards === undefined ) {
-        //   saved.data = [];
-        // } else {savedCards = saved}
         searchForm.newsNoResultsCheck(searchResults);
+
+        // инициализация класса секции с карточками
         const newsSection = new NewsSection(
           selectors.newsSection,
           keyword,
           {
+            // коллбэк отрисовки результатов поиска
             cardCreator: (data, keyword) => {
+
+              // инициализация класса одной карточки
+              const newsCard = new NewsCard(
+                selectors.cardTemplateMain,
+                mainApi.isLoggedIn,
+                selectors.newsCard,
+                {
+                  addNews: (card) => {
+                    mainApi.postArticle(card)
+                      .then((res) => newsCard.addId(res.data._id))
+                      .catch((err) => console.error(err))
+                  },
+                  removeNews: (cardId) => {
+                    mainApi.deleteArticle(cardId)
+                    .catch((err) => console.error(err))
+                  }
+                }
+              );
+              // пуш карточки в секцию
               newsSection.addCard(newsCard.create(data, keyword));
             },
+            // проверка нет ли сохраненных карточек
             newsToCheck: {
               savedNews: savedCards === undefined? saved = [] : savedCards.data,
               newNews: searchResults.articles,
             }
           },
         );
+
+        // рендер новостей
         newsSection.showNews();
       })
       .catch((err) => console.error(err))
@@ -99,7 +105,6 @@ const header = new Header(
     getInfo: () => {
       mainApi.getUserInfo()
       .then((res) => {
-        // mainApi.isLoggedIn = true;
         header.render(
           mainApi.isLoggedIn = true,
           res.data.name

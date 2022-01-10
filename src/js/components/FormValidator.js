@@ -9,6 +9,7 @@ export default class FormValidator {
     this._submitButton = this._formElement.querySelector(validator.popupSubmit);
   }
 
+  // включаем валидацию
   enableValidation(){
     this._formElement.addEventListener('submit', (evt) => {
       evt.preventDefault();
@@ -16,6 +17,7 @@ export default class FormValidator {
     this._setInputListeners();
   }
 
+  // установка слушателей на каждый инпут
   _setInputListeners(){
     this._inputs.forEach((input) => {
       input.addEventListener('input', () => {
@@ -25,6 +27,7 @@ export default class FormValidator {
     });
   }
 
+  // меняет цвет в зависимости от корректности всех данных
   _submitButtonToggler(){
     const submitState = !this._hasInvalidInput(this._formElement);
       if ((submitState) && (!this._isEmpty())) {
@@ -34,13 +37,14 @@ export default class FormValidator {
     }
   }
 
+  // так открываем ошибку
   _openInputError(input){
     const errSpan = this._popupSelector.querySelector(`.${input.id}-error`);
     errSpan.textContent = this._checkInputValidity(input, errSpan);
     errSpan.classList.remove(this._errorDisabled);
   }
 
-
+  // выдача кастомных ошибок
   _checkInputValidity(input, error) {
     if (input.validity.valueMissing) {
       return (error.textContent = 'Это обязательное поле, господин');
@@ -53,24 +57,28 @@ export default class FormValidator {
     }
   }
 
+  // прячем ошибку
   _hideInputError(input){
     const errSpan = this._popupSelector.querySelector(`.${input.id}-error`);
     errSpan.textContent = '';
     errSpan.classList.add(this._errorDisabled);
   }
 
+  // проверка есть ли хотя бы один неправильный инпут
   _hasInvalidInput(){
     return this._inputs.some((input) => {
       return !input.validity.valid;
     });
   }
 
+  // есть ли пустое поле
   _isEmpty () {
     return this._inputs.some((input) => {
       return input.value == '' ;
     });
   }
 
+  // метод открытия/очистка поля ошибки
   _isValid (input) {
     if (!input.validity.valid) {
       this._openInputError(input);

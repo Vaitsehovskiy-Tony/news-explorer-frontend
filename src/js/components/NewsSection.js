@@ -11,21 +11,21 @@ export default class NewsSection {
   //очистка контейнера
   //проверка есть ли сохраненные новости среди выдачи(для залогиненых пользователей)
   //рендер 3 новостей
-  //инсталл слушателя событий
   showNews() {
     this._cleanContainer();
     this._checkIfSaved();
     this._checkNewsLength();
-    this._moreButtonListener();
   }
 
-  // рендер 3 новостей
+  // рендер 3 новостей, контроль слушателя
   _checkNewsLength() {
     if (this._newsToRender.length > 3) {
       this._showMoreButton.classList.remove('results__show-more_hidden');
+      this._moreButtonListener();
       this._newsSlicer();
     } else {
       this._showMoreButton.classList.add('results__show-more_hidden');
+      this._removeMoreButtonListener();
       this._render(this._newsToRender, this._keyword);
     }
   }
@@ -56,10 +56,8 @@ export default class NewsSection {
   // логика слушателя
   _showMoreLogic(evt){
     evt.preventDefault();
-    this._checkNewsLength();
-    this._newsSlicer();
     this._removeMoreButtonListener();
-    this._moreButtonListener();
+    this._checkNewsLength();
   }
 
   // установка и удаление слушателей кнопки "показать еще"
