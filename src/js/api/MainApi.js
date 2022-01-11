@@ -27,6 +27,13 @@ export default class MainApi {
         credentials: this.credentialsState,
         body: toString ? JSON.stringify(toString) : undefined,
       });
+      if (!res.ok) {
+        if (res.statusText) {
+          return Promise.reject(res.statusText);
+        } else if (res.message) {
+          return Promise.reject(res.message);
+        }
+      }
       return res.json();
     } catch (e) {
       `error: ${e}`;

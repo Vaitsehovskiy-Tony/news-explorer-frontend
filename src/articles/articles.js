@@ -60,6 +60,7 @@ Promise.all([
                 mainApi.deleteArticle(id)
                 .then(() =>{
                 collection.removeCard(card);
+                document.location.reload();
                 })
                 .catch((err) => console.error(err))
               }
