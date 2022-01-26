@@ -45,14 +45,14 @@ export default class Header {
   // метод активирует слушателей, затем проверяет наличие токена
   // если находит - подключает коллбэк(рендер данных от сервера)
   tokenCheck(gotToken) {
-    this._setEventListeners();
+    this.setEventListeners();
     if (gotToken) {
       this._getInfo(gotToken)
     }
   }
 
   // установка слушателей
-  _setEventListeners() {
+  setEventListeners() {
     this._popupOpenListener();
     this._mobMenuListener();
   }

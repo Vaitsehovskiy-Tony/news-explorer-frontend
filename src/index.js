@@ -176,29 +176,8 @@ const popupSignup = new PopupSignup(
       res;
       console.log(res);
       popupSuccess.open();
-
-      // localStorage.setItem('token', res.token);
-      // mainApi.isLoggedIn = true;
     })
-    // .then(() => {
-      // mainApi.getUserInfo()
-      // .then((res) => {
-      //   header.render(
-      //     mainApi.isLoggedIn,
-      //     res.data.name,
-      //   );
-        // const popupSuccess = new Popup(selectors.popupFormSignupOk);
-        // popupSuccess.open();
-      // })
-      // .catch((err) => {
-      //   console.error(err);
-      // });
-    // })
     .catch((err) => console.error(err));
-    // mainApi.signIn(
-    //   inputs[0],
-    //   inputs[1],
-    // )
   },
   altPopup: (evt) => {
     popupSignin.open(evt);

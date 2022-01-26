@@ -3,6 +3,7 @@
 @import url('./__keywords/__keywords.css');
 @import url('./__text/__text.css');
 @import url('./__your-bookmarks/__your-bookmarks.css');
+@import url('./__keyword-and/_hidden/_hidden.css');
 
 
 .info {

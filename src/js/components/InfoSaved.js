@@ -4,6 +4,7 @@ export default class InfoSaved {
     this._title = infoSaved.infoTitle;
     this._name = name;
     this._infoTemplate = infoSaved.infoTemplate;
+    this._infoAnd = infoSaved.infoAnd;
     this._subTitle = document.querySelector('.info__keywords');
   }
 
@@ -14,23 +15,25 @@ export default class InfoSaved {
     this._getKeywordsData();
   }
 
-  // отрисовка строки информации
-  _makeSubtitle(first, second) {
-    if (first === null) this._subTitle.textContent = '';
-    else {
-      this._subTitle.querySelector('.info__keyword-first').textContent = first;
-      if (second) {
-        this._subTitle.querySelector('.info__keyword-second').textContent = second;
-      }
-    }
-  }
-
   // отрисовка заголовка
   _makeTitle() {
     if (this._array.length === 0) {
       this._title.textContent = `${this._name}, у вас нет сохранённых статей`;
     } else {
       this._title.textContent = `${this._name}, у вас ${this._array.length} сохранённых статей`;
+    }
+  }
+
+  // отрисовка строки информации
+  _makeSubtitle(first, second) {
+    if (first === null) this._subTitle.textContent = '';
+    else {
+      this._subTitle.querySelector('.info__keyword-first').textContent = first;
+      this._infoAnd.classList.add('info__keyword-and_hidden')
+      if (second) {
+        this._subTitle.querySelector('.info__keyword-second').textContent = second;
+        this._infoAnd.classList.remove('info__keyword-and_hidden')
+      }
     }
   }
 

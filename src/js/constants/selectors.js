@@ -53,5 +53,6 @@ export default {
   infoSaved: {
     infoTitle: document.querySelector('.info__your-bookmarks'),
     infoTemplate: '#infoTemplate',
+    infoAnd: document.querySelector('.info__keyword-and'),
   }
 }
