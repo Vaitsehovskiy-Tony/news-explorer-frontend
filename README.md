@@ -28,7 +28,7 @@ https://newsexplorer.nomoredomains.club/
 1. Скопируйте репозиторий с помощью команды:
 
    ```bash
-   git clone https://github.com/jellythefish/news-explorer-frontend
+   git clone https://github.com/Vaitsehovskiy-Tony/news-explorer-frontend
    ```
 
 2. Если в вашей операционной системы не установлен Node.js, то требуется его установить. Скачать можно по ссылке:
