@@ -12,7 +12,7 @@ const newsApiConfig = {
 };
 
 const mainApiConfig = {
-  baseUrl: 'https://api.newsexplorer.nomoredomains.club/',
+  baseUrl: 'http://vaitstony.art:1000/',
   // baseUrl: 'http://localhost:3000/',
   credentialsState: 'include',
   logoutLink: 'logout/',
