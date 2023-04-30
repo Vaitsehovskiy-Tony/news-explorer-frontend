@@ -3,8 +3,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Поиск и хранение персональных новостей">
-    <meta name="author" content="Vaitsehovskiy Tony">
+    <meta name="description" content="Personal news search and storage">
+    <meta name="author" content="Tony Vaits">
     <title>News Explorer</title>
     <link rel="shortcut icon" type="image/png"  href='../images/favicon-N-16x16.png'>
     <link rel="stylesheet" href="<%=htmlWebpackPlugin.files.css %>">
@@ -21,14 +21,14 @@
             <nav>
               <ul class="header-navbar__menu">
                 <li>
-                  <a href="./index.html" class="header-navbar__menu-item header-navbar__menu-item_active">Главная</a>
+                  <a href="./index.html" class="header-navbar__menu-item header-navbar__menu-item_active">Main</a>
                   <hr class="header-navbar__menu-underline">
                 </li>
                 <li class="header-navbar__saved header-navbar__menu-item_hidden">
-                  <a href="./articles.html" class="header-navbar__menu-item active">Сохранённые статьи</a>
+                  <a href="./articles.html" class="header-navbar__menu-item active">Saved articles</a>
                 </li>
                 <li class="header-navbar__auth">
-                  <button class="header-navbar__menu-item header-navbar__menu-item_auth">Авторизоваться</button>
+                  <button class="header-navbar__menu-item header-navbar__menu-item_auth">Log in</button>
                 </li>
                 <li class=" header-navbar__name header-navbar__menu-item_hidden">
                   <button class="header-navbar__menu-item header-navbar__menu-item_auth header-navbar__menu-item_logged">
@@ -47,13 +47,13 @@
                 <li class="header-mob__list-item">
                   <div class="header-mob__opened"><a class="header-navbar__menu-item" href="#">NewsExplorer</a><img src="<%=require('../images/close.svg')%>" alt="" class="header-mob__close-icon"></div></li>
                 <li class="header-mob__list-item">
-                  <a href="./index.html" class="header-navbar__menu-item">Главная</a>
+                  <a href="./index.html" class="header-navbar__menu-item">Main</a>
                 </li>
                 <li class="header-mob__list-item header-navbar__saved header-navbar__menu-item_hidden">
-                  <a href="./articles.html" target="_blank" class="header-navbar__menu-item active">Сохранённые статьи</a>
+                  <a href="./articles.html" target="_blank" class="header-navbar__menu-item active">Saved articles</a>
                 </li>
                 <li class="header-mob__list-item header-navbar__auth">
-                  <button class="header-navbar__menu-item header-navbar__menu-item_auth header-mob__menu-item_auth">Авторизоваться</button>
+                  <button class="header-navbar__menu-item header-navbar__menu-item_auth header-mob__menu-item_auth">Log in</button>
                 </li>
                 <li class="header-mob__list-item header-navbar__name header-navbar__menu-item_hidden">
                   <button class="header-navbar__menu-item header-navbar__menu-item_auth header-navbar__menu-item_logged">
@@ -66,23 +66,23 @@
           </section>
 
           <section class="header__titles">
-            <h1 class="header__titles-title">Что в мире творится?</h1>
-            <p class="header__titles-subtitle">Находите самые свежие статьи на любую тему и сохраняйте в своём личном кабинете.</p>
+            <h1 class="header__titles-title">What is going on in the world?</h1>
+            <p class="header__titles-subtitle">Find the latest articles on any topic and save them in your personal cabinet.</p>
           </section>
           <form class="search-form">
             <input type="text" class="search-form__field" placeholder="Введите тему новости" name="keyword">
-            <button class="search-form__bttn" type="submit">Искать</button>
+            <button class="search-form__bttn" type="submit">Search</button>
           </form>
         </div>
       </header>
 
       <main class="results results_hidden">
         <div class="wrapper results__ok">
-          <h2 class="results__title">Результаты поиска</h2>
+          <h2 class="results__title">Search results</h2>
           <div class="result__cards">
           </div>
           <button class="results__show-more results__show-more_hidden">
-            <span class="results__show-more-text">Показать еще</span>
+            <span class="results__show-more-text">Show more</span>
           </button>
         </div>
       </main>
@@ -90,15 +90,15 @@
       <section class="loading active results__loading results__loading_hidden">
         <div class="wrapper">
           <i class="circle-preloader"></i>
-          <p class="loading__text">Идет поиск новостей...</p>
+          <p class="loading__text">There's a news search going on...</p>
        </div>
       </section>
 
       <section class="no-results results__no-results results__no-results_hidden active">
         <div class="wrapper">
           <img src="<%=require('../images/not_found.png')%>" alt="" class="no-results__img">
-          <h4 class="no-results__title">Ничего не найдено</h4>
-          <p class="no-results__subtitle">К сожалению, по вашему запросу ничего не найдено.</p>
+          <h4 class="no-results__title">Nothing found</h4>
+          <p class="no-results__subtitle">Unfortunately, nothing was found for your query.</p>
         </div>
       </section>
 
@@ -106,10 +106,10 @@
         <div class="wrapper">
           <img src="<%=require('../images/avatar.jpg')%>" alt="" class="about__avatar">
           <article class="about__content">
-            <h3 class="about__content-title">Об авторе</h3>
-            <p class="about__content-subtitle">Привет! Меня зовут Антон Вайцеховский. Я занимаюсь веб-разработкой: пишу фронтенд и бэкенд.
-              <br><br> За год обучения в Практикуме я подробно изучил чистый JS, Node.js, научился работать с MongoDB, HTML и CSS, а также с Git и с сборщиком Webpack. Могу создавать полноценное веб-приложения с нуля, начиная с верстки, а заканчивая деплоем на сервер. А вот имя моего бота-помощника, с функцией анонимных отзывов и игрой. Буду рад фидбэку!
-              <br>Сейчас я изучаю Go, чтобы перевести на него сервер :)</p>
+            <h3 class="about__content-title">About the author</h3>
+            <p class="about__content-subtitle">Hi! My name is Anton Vaitsekhovsky. I do web development: I write frontend and backend.
+              <br><br> During the year of the Practicum, I studied in detail pure JS, Node.js, learned how to work with MongoDB, HTML and CSS, as well as Git and the Webpack builder. I can create a full-fledged web application from scratch, starting with the layout and ending with the deployment to the server. And here's the name of my helper bot, with anonymous feedback and game play. I'd be happy to get feedback!
+              <br>Right now I'm studying Go in order to translate the server to it :)</p>
           </article>
         </div>
       </section>
@@ -119,10 +119,10 @@
           <nav class="footer__inner-menu">
             <ul class="footer__menu-list">
               <li class="footer__menu-item">
-                <a href="./index.html" class="footer__menu-item-link">Главная</a>
+                <a href="./index.html" class="footer__menu-item-link">Main</a>
               </li>
               <li class="footer__menu-item">
-                <a href="https://praktikum.yandex.ru/" class="footer__menu-item-link">Яндекс.Практикум</a>
+                <a href="https://praktikum.yandex.ru/" class="footer__menu-item-link">Yandex.Practicum</a>
               </li>
               <li class="footer__menu-item">
                 <ul class="footer__socials-list">
@@ -146,25 +146,25 @@
       <section class="popup popup__signup overlay">
         <div class="popup__content">
           <img src="<%=require('../images/close.svg')%>" alt="" class="popup__close popup__close-signup">
-          <h3 class="popup__title">Регистрация</h3>
+          <h3 class="popup__title">Sign up</h3>
           <form class="popup__form" novalidate name="signup">
 
               <span class="popup__input-name">Email</span>
               <input type="email" name="email" autocomplete="off" minlength="8" maxlength="30"  class="popup__input" placeholder="Введите почту" id='mailSignup'>
               <span class="popup__error error__email mailSignup-error"></span>
 
-              <span class="popup__input-name">Пароль</span>
+              <span class="popup__input-name">Password</span>
               <input type="password" name="password" autocomplete="off" minlength="8" maxlength="30"  class="popup__input" placeholder="Введите пароль" id='passSignup'>
               <span class="popup__error error__password passSignup-error"></span>
 
-              <span class="popup__input-name">Имя</span>
+              <span class="popup__input-name">Name</span>
               <input type="text" name="name" autocomplete="off" minlength="2" maxlength="30"  class="popup__input" placeholder="Введите своё имя" id='nickSignup'>
               <span class="popup__error error__password nickSignup-error"></span>
 
-              <button type="submit" name="bttn" class="button popup__button">Зарегистрироваться</button>
+              <button type="submit" name="bttn" class="button popup__button">Sign up</button>
 
               <div class="popup__signature">
-                <span class="popup__alternative">или<button class="popup__alternative-button popup__signin-button">Войти</button> </span>
+                <span class="popup__alternative">or<button class="popup__alternative-button popup__signin-button">Sign in</button> </span>
               </div>
           </form>
         </div>
@@ -173,20 +173,20 @@
       <section class="popup popup__signin overlay">
         <div class="popup__content">
           <img src="<%=require('../images/close.svg')%>" alt="" class="popup__close popup__close-signin">
-          <h3 class="popup__title">Вход</h3>
+          <h3 class="popup__title">Sign in</h3>
           <form class="popup__form" novalidate name="signin">
 
               <span class="popup__input-name">Email</span>
               <input type="email" name="email" autocomplete="off" minlength="8" maxlength="30"  class="popup__input" placeholder="Введите почту" id='mailSignin'>
               <span class="popup__error error__email mailSignin-error"></span>
 
-              <span class="popup__input-name">Пароль</span>
+              <span class="popup__input-name">Password</span>
               <input type="password" name="password" autocomplete="off" minlength="8" maxlength="30"  class="popup__input" placeholder="Введите пароль" id='passSignin'>
               <span class="popup__error error__password passSignin-error"></span>
 
-              <button type="submit" name="bttn" class="button popup__button">Войти</button>
+              <button type="submit" name="bttn" class="button popup__button">Log in</button>
               <div class="popup__signature">
-                <span class="popup__alternative">или <button class="popup__alternative-button popup__signup-button">Зарегистрироваться</button> </span>
+                <span class="popup__alternative">or <button class="popup__alternative-button popup__signup-button">Sign up</button> </span>
               </div>
           </form>
         </div>
@@ -194,8 +194,8 @@
       <section class="popup__signup-ok overlay">
         <div class="popup__content">
           <img src="<%=require('../images/close.svg')%>" alt="" class="popup__close popup__close-user">
-          <h3 class="popup__title">Пользователь успешно зарегистрирован!</h3>
-          <button class="popup__alternative-button">Выполнить вход</button>
+          <h3 class="popup__title">User is successfully registered!</h3>
+          <button class="popup__alternative-button">Log in</button>
         </div>
       </section>
 
@@ -204,7 +204,7 @@
           <img src="" alt="" class="card__img">
           <div class="card__bookmark"></div>
           <div class="card__tag">
-            <span class="card__tag-text">Природа</span>
+            <span class="card__tag-text">Nature</span>
           </div>
           <div class="card__login-reminder active">
             <span class="card__login-reminder-text"></span>

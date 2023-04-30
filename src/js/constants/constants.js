@@ -12,7 +12,7 @@ const newsApiConfig = {
 };
 
 const mainApiConfig = {
-  baseUrl: 'http://vaitstony.art:1000/',
+  baseUrl: 'https://api.tonyvaits.ru/',
   // baseUrl: 'http://localhost:3000/',
   credentialsState: 'include',
   logoutLink: 'logout/',

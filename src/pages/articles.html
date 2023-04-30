@@ -3,8 +3,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Поиск и хранение персональных новостей">
-    <meta name="author" content="Vaitsehovskiy Tony">    <title>News Explorer - Favourites</title>
+    <meta name="description" content="Personal news search and storage">
+    <meta name="author" content="Tony Vaits">    <title>News Explorer - Favourites</title>
     <link rel="stylesheet" href="<%=htmlWebpackPlugin.files.css %>">
 </head>
 <body>
@@ -19,14 +19,14 @@
             <nav>
               <ul class="header-navbar__menu">
                 <li>
-                  <a href="./index.html"  class="header-navbar__menu-item">Главная</a>
+                  <a href="./index.html"  class="header-navbar__menu-item">Main</a>
                 </li>
                 <li class="header-navbar__saved header-navbar__menu-item_hidden">
-                  <a href="./articles.html" class="header-navbar__menu-item active header-navbar__menu-item_active">Сохранённые статьи</a>
+                  <a href="./articles.html" class="header-navbar__menu-item active header-navbar__menu-item_active">Saved articles</a>
                   <hr class="header-navbar__menu-underline">
                 </li>
                 <li class="header-navbar__menu-item_hidden">
-                  <button class="header-navbar__menu-item header-navbar__menu-item_auth">Авторизоваться</button>
+                  <button class="header-navbar__menu-item header-navbar__menu-item_auth">Sign in</button>
                 </li>
                 <li class="header-navbar__name header-navbar__menu-item_hidden">
                   <button class="header-navbar__menu-item header-navbar__menu-item_auth header-navbar__menu-item_logged">
@@ -45,10 +45,10 @@
                 <li class="header-mob__list-item">
                   <div class="header-mob__opened"><a class="header-navbar__menu-item" href="#">NewsExplorer</a><img src="<%=require('../images/close.svg')%>" alt="" class="header-mob__close-icon"></div></li>
                 <li class="header-mob__list-item">
-                  <a href="./index.html" class="header-navbar__menu-item">Главная</a>
+                  <a href="./index.html" class="header-navbar__menu-item">Main</a>
                 </li>
                 <li class="header-mob__list-item header-navbar__saved header-navbar__menu-item_hidden">
-                  <a href="./articles.html" class="header-navbar__menu-item active">Сохранённые статьи</a>
+                  <a href="./articles.html" class="header-navbar__menu-item active">Saved articles</a>
                 </li>
                 <li class="header-mob__menu-item_auth"></li>
                 <li class="header-mob__list-item header-navbar__name header-navbar__menu-item_hidden">
@@ -66,12 +66,12 @@
 
       <section class="info">
         <div class="wrapper">
-          <span class="info__text">Сохранённые статьи</span>
-          <h2 class="info__your-bookmarks">Грета, у вас 5 сохранённых статей</h2>
+          <span class="info__text">Saved articles</span>
+          <h2 class="info__your-bookmarks">Anton, you have 5 saved articles</h2>
           <h4 class="info__keywords">
-            По ключевым словам:
+            By keywords:
             <span class="info__keyword-first info__keywords-bold"></span>
-            <nobr class="info__keyword-and"> и</nobr>
+            <nobr class="info__keyword-and"> and</nobr>
             <span class="info__keyword-second info__keywords-bold"></span>
           </h4>
         </div>
@@ -83,7 +83,7 @@
           <div class="result__cards">
           </div>
           <button class="results__show-more results__show-more_hidden">
-            <span class="results__show-more-text">Показать еще</span>
+            <span class="results__show-more-text">Show more</span>
           </button>
         </div>
       </main>
@@ -93,10 +93,10 @@
           <nav class="footer__inner-menu">
             <ul class="footer__menu-list">
               <li class="footer__menu-item">
-                <a href="./index.html" class="footer__menu-item-link">Главная</a>
+                <a href="./index.html" class="footer__menu-item-link">Main</a>
               </li>
               <li class="footer__menu-item">
-                <a href="https://praktikum.yandex.ru/" class="footer__menu-item-link">Яндекс.Практикум</a>
+                <a href="https://praktikum.yandex.ru/" class="footer__menu-item-link">Yandex.Practicum</a>
               </li>
               <li class="footer__menu-item">
                 <ul class="footer__socials-list">
