@@ -1,51 +1,51 @@
 # News Explorer
 
-https://newsexplorer.nomoredomains.club/
+Explore it here: [News Explorer](https://newsexplorer.nomoredomains.club/)
 
 ![2021-12-29_00-58-51](https://user-images.githubusercontent.com/54285416/147610753-756bbbe1-406d-4e13-81b1-3741c74c130e.png)
 
 ## Содержание
 
-* [О проекте](#about)
-* [Установка](#install)
-	* [Клонирование репозитория](#clone)
-	*  [Установка зависимостей](#dep)
-* [Запуск приложения](#run)
-* [Ограничения](#limitations)
-* [В заключении](#in_сonclusion)
+* [About the Project](#about)
+* [Installation](#install)
+	* [Cloning the Repository](#clone)
+	*  [Installing Dependencies](#dep)
+* [Running the App](#run)
+* [Limitations](#limitations)
+* [Conclusion](#in_сonclusion)
 
-## <a name='about'></a>О проекте
-Данный проект был выполнен в рамках дипломной работы курса Яндекс.Практикума и содержит следующий стек технологий:
-`HTML/CSS`, `JavaScript`, `Node.js`, `Webpack`.
+## <a name='about'></a>About the Project
+News Explorer is a web application created as part of a diploma project for the Yandex.Practicum course. It was built using the following technologies:HTML/CSS, JavaScript, Node.js, and Webpack.
 
-Веб-приложение **News Explorer** реализовывает сервис поиска новостей из различных источников по ключевым словам. Данное приложение основывается на сервисе [*NewsAPI*](https://newsapi.org/), который агрегирует новости по запросу со множества источников и возвращает их в виде структурированного JSON файла. 
-В веб-приложении присутствует возможность регистрации аккаунта, а также сохранении результатов поиска новостей в раздел "Сохранненые статьи".
+The app provides a news search service that allows users to search for news articles across various sources using keywords. It integrates with the NewsAPI, which aggregates news from multiple sources and returns structured JSON results.
 
-##  <a name='install'></a>Установка
+Users can register an account and save their favorite search results in the "Saved Articles" section for easy access later.
 
-### <a name='clone'></a>Клонирование репозитория
+##  <a name='install'></a>Installation
 
-1. Скопируйте репозиторий с помощью команды:
+### <a name='clone'></a>Cloning the Repository
+
+1. Clone the repository using the following command:
 
    ```bash
    git clone https://github.com/Vaitsehovskiy-Tony/news-explorer-frontend
    ```
 
-2. Если в вашей операционной системы не установлен Node.js, то требуется его установить. Скачать можно по ссылке:
+2. Ensure Node.js is installed on your system. If not, you can download it here:
    ```
    https://nodejs.org/en/download/
    ```
-   Рекомендуется установить самую последнюю версию.
+   It's recommended to install the latest version.
 
-###  <a name='dep'></a>Установка зависимостей
+###  <a name='dep'></a>Installing Dependencies
 
-1. Перейдите в папку с проектом news-explorer-frontend:
+1. Navigate to the project folder: news-explorer-frontend:
 
    ```bash
    cd news-explorer-frontend
    ```
 
-2. Установите требуемые зависимости с помощью команды:
+2. Install the required dependencies:
 
    ```bash
    npm install
@@ -53,37 +53,37 @@ https://newsexplorer.nomoredomains.club/
 
 
 
-## <a name='run'></a>Запуск приложения
+## <a name='run'></a>Running the App
 
-1. Соберите приложение из исходников с помощью команды:
+1. Build the app from the source files:
 
    ```bash
    npm run build
    ```
 
-   Все собранные файлы будут храниться в папке **dist**.
+   The compiled files will be stored in the **dist** folder.
 
-2. Для запуска локального веб-сервера, на котором будет размещено приложение, вызовите команду в той же директории news-explorer-frontend:
+2. Start the local development server to run the app:
 
    ```bash
     npm run dev
    ```
 
-   Окно с приложением откроется автоматически.  
+   The app will automatically open in your browser. 
   
-## <a name='limitations'></a>Ограничения
+## <a name='limitations'></a>Limitations
 
-  Текущая подписка в сервисе newsApi имеет ограниченичение в 100 запросов в день. 
-  С учетом поддержки проекта и расширением функционала, а также посещением 
-  приложения пользователями-гостями, ресурс запросов может быть исчерпан. 
-  Я работаю над решением этой задачи. 
-  
+  The current NewsAPI subscription has a limit of 100 requests per day.
+  As more features are added and the app attracts more users, this limit
+  may be reached quickly. I am actively working on a solution to expand
+  the app's capacity.
 
-## <a name='in_conclusion'></a>В заключении
+## <a name='in_conclusion'></a>Conclusion
 
-  Все заявленные функции на момент последнего деплоя работают исправно, 
-  если вы найдете баги или ошибки буду признателен за обратную связь
+  All features are functioning as intended at the time of the latest deployment.
+  If you encounter any bugs or issues, I would greatly appreciate your feedback.
+  Feel free to reach out via Telegram.
   [@tonyvaits](https://t.me/tonyvaits "Telegram").
   
-  Также вы можете ознакомиться с серверной частью по ссылке:
+  You can also explore the backend of the project here:
   https://github.com/Vaitsehovskiy-Tony/news-explorer-api
