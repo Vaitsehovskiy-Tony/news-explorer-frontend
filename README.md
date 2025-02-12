@@ -15,7 +15,7 @@ Explore it here: [News Explorer](https://newsexplorer.nomoredomains.club/)
 * [Conclusion](#in_сonclusion)
 
 ## <a name='about'></a>About the Project
-News Explorer is a web application created as part of a diploma project for the Yandex.Practicum course. It was built using the following technologies:HTML/CSS, JavaScript, Node.js, and Webpack.
+News Explorer is a web application created as part of Yandex.Practicum course. It was built using the following technologies:HTML/CSS, JavaScript, Node.js, and Webpack.
 
 The app provides a news search service that allows users to search for news articles across various sources using keywords. It integrates with the NewsAPI, which aggregates news from multiple sources and returns structured JSON results.
 
